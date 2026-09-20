@@ -23,7 +23,7 @@
                 {{ with $hub }}<a href="{{ .Permalink }}" class="btn-primary">{{ if $en }}See the recipes{{ else }}Voir les recettes{{ end }}{{ partial "icon.html" "arrow" }}</a>{{ end }}
                 <a href="{{ (cond $en "/en/blog/" "/blog/") | relURL }}" class="btn-outline">{{ i18n "explore_blog" }}</a>
             </div>
-            <p class="hero-note">{{ len $recipes }} {{ if $en }}recipes{{ else }}recettes{{ end }} · {{ len $posts }} {{ if $en }}articles{{ else }}articles{{ end }} · {{ if $en }}written by{{ else }}écrit par{{ end }} {{ (index .Site.Data.authors "bastien-delorme").name }}</p>
+            <p class="hero-note">{{ len $recipes }} {{ if $en }}recipes{{ else }}recettes{{ end }} · {{ len $posts }} {{ if $en }}articles{{ else }}articles{{ end }} · {{ if $en }}written by{{ else }}écrit par{{ end }} {{ (index hugo.Data.authors "bastien-delorme").name }}</p>
         </div>
         <div class="hero-split-media" data-parallax="0.1">
             <img src="{{ "images/hero-brunch.webp" | relURL }}" alt="{{ if $en }}Brunch table seen from above{{ else }}Table de brunch vue de dessus{{ end }}" width="1200" height="900" fetchpriority="high">

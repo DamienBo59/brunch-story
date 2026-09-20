@@ -6,9 +6,9 @@
 ## {{ if eq $lang "en" }}About{{ else }}A propos{{ end }}
 
 {{ if eq $lang "en" -}}
-Brunch Story is an independent blog about brunch and breakfast, written by {{ (index .Site.Data.authors "bastien-delorme").name }}, {{ (index (index .Site.Data.authors "bastien-delorme").jobTitle "en") | lower }}. Every article is built on concrete benchmarks: quantities per person, temperatures, timings and costs, so that a reader can act on it the same morning.
+Brunch Story is an independent blog about brunch and breakfast, written by {{ (index hugo.Data.authors "bastien-delorme").name }}, {{ (index (index hugo.Data.authors "bastien-delorme").jobTitle "en") | lower }}. Every article is built on concrete benchmarks: quantities per person, temperatures, timings and costs, so that a reader can act on it the same morning.
 {{- else -}}
-Brunch Story est un blog indépendant sur le brunch et le petit déjeuner, écrit par {{ (index .Site.Data.authors "bastien-delorme").name }}, {{ (index (index .Site.Data.authors "bastien-delorme").jobTitle "fr") | lower }}. Chaque article repose sur des repères concrets : quantités par personne, températures, temps de cuisson et coûts, pour être applicable le matin même.
+Brunch Story est un blog indépendant sur le brunch et le petit déjeuner, écrit par {{ (index hugo.Data.authors "bastien-delorme").name }}, {{ (index (index hugo.Data.authors "bastien-delorme").jobTitle "fr") | lower }}. Chaque article repose sur des repères concrets : quantités par personne, températures, temps de cuisson et coûts, pour être applicable le matin même.
 {{- end }}
 
 ## {{ if eq $lang "en" }}Main content{{ else }}Contenu principal{{ end }}

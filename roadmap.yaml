@@ -225,40 +225,40 @@ articles:
     volume: 1000
     kd: null
     scheduled_date: "2026-10-02"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-10-02"
+    published_url_fr: "https://www.brunch-story.fr/blog/smoothie-concombre/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/cucumber-smoothie/"
     error: null
   - kw: "bagel saumon avocat"
     category: "Oeufs et salé"
     volume: 1727
     kd: null
     scheduled_date: "2026-10-06"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-10-06"
+    published_url_fr: "https://www.brunch-story.fr/blog/bagel-saumon-avocat/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/salmon-avocado-bagel/"
     error: null
   - kw: "petit déjeuner japonais"
     category: "Organiser un brunch"
     volume: 1900
     kd: null
     scheduled_date: "2026-10-09"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-10-09"
+    published_url_fr: "https://www.brunch-story.fr/blog/petit-dejeuner-japonais/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/japanese-breakfast/"
     error: null
   - kw: "petit déjeuner sportif"
     category: "Petit déjeuner sain"
     volume: 1900
     kd: null
     scheduled_date: "2026-10-13"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-10-13"
+    published_url_fr: "https://www.brunch-story.fr/blog/petit-dejeuner-sportif/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/pre-workout-breakfast/"
     error: null
   - kw: "recette brioche tressée"
     category: "Pancakes et sucré"
@@ -295,10 +295,10 @@ articles:
     volume: 1300
     kd: null
     scheduled_date: "2026-10-27"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-10-27"
+    published_url_fr: "https://www.brunch-story.fr/blog/petit-dejeuner-espagnol/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/spanish-breakfast/"
     error: null
   - kw: "calories d'un café au lait"
     category: "Petit déjeuner sain"

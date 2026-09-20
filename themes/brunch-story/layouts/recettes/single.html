@@ -2,7 +2,7 @@
 {{ $lang := .Site.Language.Lang }}
 {{ $r := .Params.recipe }}
 {{ $en := eq $lang "en" }}
-{{ $author := index .Site.Data.authors (.Params.author | default "bastien-delorme") }}
+{{ $author := index hugo.Data.authors (.Params.author | default "bastien-delorme") }}
 
 {{ with .Params.image }}
 <div class="recipe-hero-wrap" data-parallax>
