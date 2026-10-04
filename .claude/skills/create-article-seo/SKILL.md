@@ -1,8 +1,8 @@
 # Skill : Creer des articles evergreen SEO (production locale, polyvalente)
 
-Cette skill produit en **local** (Mac de Damien, Opus 4.7 sans limite Stream idle timeout) un **ou plusieurs articles evergreen SEO bilingues FR + EN**. Polyvalente : 3 modes de selection des KW + 3 strategies de scheduling.
+Cette skill produit en **local** (Opus 4.7 sans limite Stream idle timeout) un **ou plusieurs articles evergreen SEO bilingues FR + EN**. Polyvalente : 3 modes de selection des KW + 3 strategies de scheduling.
 
-C'est **la methode 2** du systeme du parc PBN GEO perso (alternative au CCR cloud `/create-article-auto`). Avantages :
+C'est **la methode 2** de publication du blog (alternative au CCR cloud `/create-article-auto`). Avantages :
 - Opus 4.7 sans risque de Stream idle timeout
 - Vraie analyse SERP avec WebFetch des concurrents (sandbox cloud bloque les domaines commerciaux)
 - Maillage interne plus riche (cross-batch : articles d'un meme batch peuvent se mailler entre eux)
@@ -16,7 +16,7 @@ La publication reelle (mise en ligne) se fait via :
 ## Quand l'utiliser
 
 - 1x/mois : production en batch des prochains articles depuis `roadmap.yaml` (mode A)
-- Ponctuel : roadmap externe (Sheet d'un consultant, KW fournis par un client) (mode B)
+- Ponctuel : roadmap externe (Sheet d'un tiers, KW fournis par un client) (mode B)
 - Ponctuel : 1 ou plusieurs KW a la demande, pas dans la roadmap (mode C)
 
 ## Pre-requis dans le blog
@@ -198,7 +198,7 @@ La rediaction se fait en **sequence**. Apres chaque article rredige, il rejoint 
 - `q` = `kw`
 - `engine` = `google`
 - `hl` = langue principale
-- `gl` = pays cible
+- `gl` = pays vise
 - `num` = 10
 - `location` = pays
 
@@ -229,7 +229,7 @@ Boucler les `organic_results`. Pour chaque URL :
 A partir des donnees fetched + SerpAPI :
 - **Intention de recherche** : informationnelle / transactionnelle / comparative / mixte
 - **Patterns Hn recurrents** : H2 chez 2+/5 concurrents
-- **Longueur cible** : moyenne concurrents +/- 10% (ou 1500-2000 mots si mode degrade)
+- **Longueur visee** : moyenne concurrents +/- 10% (ou 1500-2000 mots si mode degrade)
 - **FAQ pertinente ?** : VRAI si 50%+ concurrents ont une FAQ OU si `related_questions` retournes
 - **Tableau pertinent ?** : VRAI si 50%+ concurrents en ont OU intention comparative
 - **Liste questions FAQ** (si pertinente) : 4-6 questions extraites des PAA + FAQ concurrents, dedupliquees, reformulees
@@ -239,7 +239,7 @@ A partir des donnees fetched + SerpAPI :
 
 Regles pixel inline (pas d'appel a `/tech-title` ni `/tech-meta-description`).
 
-- **Title** : format `[Kw] : [angle]`, kw en premier tiers. **Le budget de 60 caracteres porte sur le title RENDU**, suffixe du theme compris (` | Brunch Story` = 15 car, ` | Mamie-Thé` = 12 car), donc **45 caracteres au maximum dans le frontmatter** pour brunch-story et 48 pour mamie-the. Ne jamais ecrire le nom du site dans le frontmatter, le theme l'ajoute. Defaut trouve le 2026-09-12 : les 20 articles du parc perso rendaient 64 a 88 caracteres.
+- **Title** : format `[Kw] : [angle]`, kw en premier tiers. **Le budget de 60 caracteres porte sur le title RENDU**, suffixe du theme compris (` | Brunch Story` = 15 car), donc **45 caracteres au maximum dans le frontmatter**. Ne jamais ecrire le nom du site dans le frontmatter, le theme l'ajoute. Defaut trouve le 2026-09-12 : les articles rendaient 64 a 88 caracteres.
 - **Meta description** : <=155 char, contient kw, phrase descriptive
 
 ### 2.5 Structure Hn
@@ -264,31 +264,28 @@ Injecter `author: <id-slug>` dans le frontmatter. Meme ID pour FR et EN.
 
 ### 2.7 Image hero
 
-> **Cascade des sources d'image (parc perso, 2026-09-12).** Le script
+> **Cascade des sources d'image (2026-09-12).** Le script
 > `.claude/scripts/fetch-image.sh` essaie dans cet ordre : **Pexels**, puis **Unsplash**,
 > puis **Wikimedia Commons**, puis **Openverse**, puis un visuel de charte genere en local
 > par `.claude/scripts/make-placeholder.py`. Il ne rend jamais la main sans visuel.
 >
-> **Openverse n'est plus la source nominale, il est l'avant-dernier recours.** Deux raisons :
-> la mesure du parc pro (sur 45 heros, 10 photos franchement hors sujet, 15 generiques, et
-> des URLs mortes), et le fait qu'**`api.openverse.org` est injoignable depuis le Mac de
-> Damien** (timeout, et 403 sur `openverse.org`, mesure du 2026-09-12). C'est **Wikimedia
-> Commons** qui porte donc reellement la cascade tant qu'aucune cle n'est posee.
+> **Openverse n'est plus la source nominale, il est l'avant-dernier recours.** Ses resultats
+> sont souvent hors sujet ou generiques, et **`api.openverse.org` est souvent injoignable**
+> (timeout, et 403 sur `openverse.org`, mesure du 2026-09-12). C'est **Wikimedia Commons**
+> qui porte la cascade quand aucune cle n'est disponible.
 >
-> Les cles `PEXELS_API_KEY` et `UNSPLASH_ACCESS_KEY` sont lues dans l'environnement ou dans
-> le `.env` du **Drive perso uniquement**, **jamais dans le repo** : les repos du parc sont
-> publics, et le parc perso n'emprunte rien au Drive datashake. **Au 2026-09-12 aucune des
-> deux n'existe cote perso** : la cascade demarre donc a Commons, et l'article sort quand meme.
+> Les cles `PEXELS_API_KEY` et `UNSPLASH_ACCESS_KEY` sont lues dans l'environnement, ou dans
+> le fichier `.env` designe par `IMAGE_KEYS_ENV_FILE`, **jamais dans le repo** : il est
+> public. Sans cle, la cascade demarre a Commons, et l'article sort quand meme.
 >
 > Le script tient un registre `.claude/hero-sources.json` qui **empeche deux articles de
 > porter la meme photo**. Il est versionne, il ne contient que des identifiants publics.
 >
 > ⚠️ **Le controle visuel de l'image est obligatoire avant publication, quelle que soit la
-> banque.** Mesure du 2026-09-12 sur les 10 premiers heros du parc perso : **3 images a
-> rejeter** malgre un titre de fichier correct, dont un plateau de cantine scolaire pour
-> « plateau petit dejeuner », un muesli chocolate en tete d'un article sur l'index
-> glycemique bas (l'image contredisait le texte), et un fichier intitule « Chamomile Flower »
-> qui **montrait une tout autre plante**. Le titre ne garantit rien sur le contenu.
+> banque.** Mesure du 2026-09-12 sur les 10 premiers heros : **3 images a rejeter** malgre
+> un titre de fichier correct, dont un plateau de cantine scolaire pour « plateau petit
+> dejeuner » et un muesli chocolate en tete d'un article sur l'index glycemique bas (l'image
+> contredisait le texte). Le titre ne garantit rien sur le contenu.
 
 
 
@@ -306,7 +303,7 @@ bash .claude/scripts/fetch-image.sh "<kw traduit en anglais>" "<slug-fr>" "stati
 2. **Ajouter au pool les articles deja produits dans ce batch** (cross-batch : permet aux articles du meme run de se mailler entre eux)
 3. Scorer chaque candidat : category identique +3, tags partages +1 chacun, mots communs kw +2
 4. Garder 3-5 meilleurs scores
-5. Construire les ancres : ancre = mot-cle principal de l'article cible
+5. Construire les ancres : ancre = mot-cle principal de l'article vise
 6. Inserts contextuels dans le body (etape 2.9), un par section pertinente, **intra-langue uniquement**
 
 ### 2.9 Redaction FR
@@ -426,7 +423,7 @@ Demander :
 
 Selon choix :
 - (1) : `git add -A && git commit -m "evergreen: <N> articles produits (mode <X>)" && git pull --rebase origin main && git push origin main`
-- (2) : laisser en local, message a Damien : "Articles en local, fais ton review puis commit/push manuellement"
+- (2) : laisser en local, message a l'utilisateur : "Articles en local, fais ton review puis commit/push manuellement"
 - (3) : `git add -A && git commit -m "evergreen: <N> articles produits (mode <X>)"`, pas de push
 
 Apres push, GitHub Actions `hugo.yml` se declenche :

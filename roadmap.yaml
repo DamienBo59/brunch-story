@@ -43,7 +43,7 @@
 #
 # CHAMPS EDITABLES PAR L'HUMAIN
 # -----------------------------
-#   kw              (obligatoire) Mot-cle principal SEO cible. Langue principale du blog.
+#   kw              (obligatoire) Mot-cle principal SEO vise. Langue principale du blog.
 #   category        (obligatoire) Categorie du blog. Doit matcher une categorie definie
 #                                 dans le hugo.toml (en langue principale).
 #   volume          (informatif)  Volume mensuel de recherche. Aide l'humain a prioriser,
@@ -101,10 +101,10 @@
 # 87 mots-cles. Le corpus de septembre en compte 1 906, dont 632 en longue
 # traine reellement ciblable. Elle est donc remplacee, pas completee.
 #
-# Filtres appliques au corpus (voir la fiche mots-cles 2026-09 du Drive) :
+# Filtres appliques au corpus (etude de mots-cles de septembre 2026) :
 #   - 3 mots ou plus, volume entre 150 et 3 000, KGR < 0,6 quand il existe
-#   - frontiere gouter-gourmand.fr respectee : gateaux, cookies, tartes et
-#     galette des rois laisses a P02. Brioche et pain perdu restent ici
+#   - perimetre du blog respecte : gateaux, cookies, tartes et galette des
+#     rois ecartes. Brioche et pain perdu restent ici
 #   - requetes produit a SERP tenue par les marques ecartees en frontal
 #     (granola, muesli, flocons d'avoine, graines de chia en requete nue)
 #   - local, marques, materiel et transactionnel retires
@@ -114,7 +114,7 @@
 # Controles passes : 0 couple cannibalisant, 0 paire consecutive de meme
 # categorie, au moins 3 categories sur toute fenetre de 5 articles.
 #
-# 60 entrees, 12 par rubrique, 72 006 de volume mensuel cible,
+# 60 entrees, 12 par rubrique, 72 006 de volume mensuel vise,
 # du 2026-09-12 au 2027-03-23, cadence mardi et vendredi.
 # ==========================================================================
 
@@ -261,7 +261,7 @@ articles:
     published_url_en: "https://www.brunch-story.fr/en/blog/pre-workout-breakfast/"
     error: null
   # Sautee le 2026-09-20 et le 2026-10-04, laissee todo : double /blog/recette-brioche-a-l-ancienne/.
-  # En attente d'arbitrage de Damien.
+  # En attente d'arbitrage.
   - kw: "recette brioche tressée"
     category: "Pancakes et sucré"
     volume: 3000
@@ -343,7 +343,7 @@ articles:
     published_url_en: "https://www.brunch-story.fr/en/blog/savoury-toast-recipes/"
     error: null
   # Sautee le 2026-10-04, laissee todo : cannibalise /blog/plateau-petit-dejeuner/, qui porte deja le tag
-  # "petit dejeuner au lit", une FAQ et un H2 dedies. En attente d'arbitrage de Damien.
+  # "petit dejeuner au lit", une FAQ et un H2 dedies. En attente d'arbitrage.
   - kw: "petit déjeuner au lit"
     category: "Organiser un brunch"
     volume: 1300

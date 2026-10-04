@@ -23,7 +23,7 @@ Si pas de remote, rediriger l'utilisateur vers `/github-setup`.
 
 ## Etape 1.5 : Pull avant deploiement (sync obligatoire)
 
-**Standard parc PBN GEO perso** : Damien travaille depuis deux Macs (MacBook Pro et MacBook Air). Avant de push, toujours pull pour recuperer les commits faits depuis l'autre machine et eviter les conflits.
+**Regle** : le repo peut etre modifie depuis plusieurs machines. Avant de push, toujours pull pour recuperer les commits faits depuis l'autre machine et eviter les conflits.
 
 ```bash
 git pull --rebase origin main
@@ -57,7 +57,7 @@ git commit -m "[message]"
 git push origin main
 ```
 
-**Standard parc PBN GEO perso** : on push toujours direct sur `main`. Jamais de branche annexe ni de PR.
+**Regle** : on push toujours direct sur `main`. Jamais de branche annexe ni de PR.
 
 ## Etape 4 : Suivi du deploiement
 

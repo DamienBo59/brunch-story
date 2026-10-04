@@ -12,7 +12,7 @@ Poser les questions suivantes a l'utilisateur. Attendre ses reponses avant de co
 
 ### Questions obligatoires
 
-1. **Nom du site** : Comment s'appelle le site ? (ex: "Mamie-The", "Mon Blog Voyage")
+1. **Nom du site** : Comment s'appelle le site ? (ex: "Brunch Story", "Mon Blog Voyage")
 2. **Description courte** : En une phrase, de quoi parle le site ? (ex: "Un blog sur l'univers du the")
 3. **Categories du blog** : Quelles sont les grandes categories d'articles ? (ex: "Thes verts, Thes noirs, Tisanes, Rituels et Conseils")
    - **IMPORTANT :** Ne JAMAIS utiliser le caractere `&` dans les noms de categories. Toujours le remplacer par "et". Hugo supprime le `&` lors de la generation du slug URL mais laisse un double espace, ce qui cree un double tiret `--` dans l'URL. Les liens du menu pointent vers un slug avec un seul tiret → 404. Si l'utilisateur propose un nom avec `&`, le remplacer automatiquement par "et".
@@ -25,7 +25,7 @@ Poser les questions suivantes a l'utilisateur. Attendre ses reponses avant de co
 
 ### Questions optionnelles
 
-6. **Domaine cible** : Y a-t-il deja un nom de domaine prevu ? (pour configurer le baseURL)
+6. **Domaine prevu** : Y a-t-il deja un nom de domaine prevu ? (pour configurer le baseURL)
 7. **Logo** : Y a-t-il un logo a integrer ?
 8. **Pages supplementaires** : Au-dela du blog, faut-il des pages statiques ? (A propos, Contact, etc.)
 9. **Design Figma** : As-tu un design Figma (URL ou code HTML exporte) a utiliser comme base pour le layout du site ?
@@ -136,7 +136,7 @@ defaultContentLanguageInSubdir = false                 # langue principale a la 
 ```
 
 **Regles importantes :**
-- `defaultContentLanguage` = la langue choisie par le consultant (cette langue est servie a la racine du domaine `/`)
+- `defaultContentLanguage` = la langue choisie par l'utilisateur (cette langue est servie a la racine du domaine `/`)
 - La langue EN est **TOUJOURS** configuree, meme si la principale est autre chose que FR
 - Si la langue principale est deja EN, ne pas dupliquer (pas besoin de `[languages.en]` en plus)
 - Pour chaque categorie, generer le slug FR **et** le slug EN traduit
@@ -224,9 +224,9 @@ Le partial `seo-head.html` genere automatiquement :
 - Twitter Card
 - JSON-LD (schema.org) pour les articles de blog (BlogPosting)
 
-## Etape 4.5 — Installer les auteurs par defaut
+## Etape 4.5 — Installer l'auteur du blog
 
-Tous les sites crees a partir de ce template partagent les memes auteurs fictifs (6 personas unifies avec bios, expertises, topics).
+Un blog n'a qu'un auteur, avec bio bilingue, expertises et topics.
 
 ### Copier le fichier authors.yaml
 
@@ -235,9 +235,9 @@ mkdir -p data
 cp .claude/templates/data/authors.yaml data/authors.yaml
 ```
 
-Ce fichier contient les **3 auteurs du parc perso**, qui sont aussi ses 3 personas Reddit : Hélène Vasseur (thé, `mamie-the.fr`), Marion Kieffer (patisserie et gouter, `gouter-gourmand.fr`), Bastien Delorme (brunch et petit dejeuner, `brunch-story.fr`). Hugo le lit nativement via `.Site.Data.authors`.
+Ce fichier sert de modele : remplacer l'auteur qu'il contient par celui du nouveau blog. Hugo le lit nativement via `.Site.Data.authors`.
 
-⚠️ **Un blog = un seul auteur, celui de sa thematique.** Ne pas copier les 3 auteurs sur chaque blog : ne garder que celui du blog cree. Un auteur qui signe sur deux blogs du parc relie les deux sites, et un blog a deux voix est un signal. Lire sa fiche persona avant d'ecrire quoi que ce soit : Drive perso, `100 Areas/seo_freelance/Reddit/parc-reddit/personas/`.
+⚠️ **Un blog = un seul auteur, celui de sa thematique.** Un blog a deux voix n'est pas credible. Definir sa voix, son parcours et ses faits avant d'ecrire quoi que ce soit.
 
 ### Copier les avatars
 
@@ -251,8 +251,8 @@ if [ -d ".claude/templates/images/authors" ]; then
 fi
 ```
 
-Si les fichiers avatars ne sont pas encore presents dans le template, informer le consultant :
-> "L'avatar de l'auteur du blog est a generer manuellement via un generateur AI (Midjourney, DALL-E). Les prompts des 3 auteurs du parc sont dans `.claude/templates/data/avatar-prompts.md`. Une fois genere, placer le fichier WebP dans `static/images/authors/[id].webp`."
+Si les fichiers avatars ne sont pas encore presents dans le template, informer l'utilisateur :
+> "L'avatar de l'auteur du blog est a generer manuellement via un generateur AI (Midjourney, DALL-E). Le style et un exemple de prompt sont dans `.claude/templates/data/avatar-prompts.md`. Une fois genere, placer le fichier WebP dans `static/images/authors/[id].webp`."
 
 Le site fonctionne meme sans les avatars (fallback placeholder avec 1ere lettre du nom), mais les avatars renforcent l'E-E-A-T et la credibilite aupres des LLMs et des lecteurs.
 
@@ -312,7 +312,7 @@ Chaque paire FR/EN partage le meme `translationKey` (ex: `translationKey: "artic
 
 Les articles doivent etre courts (300-500 mots) mais correctement structures :
 - Frontmatter complet (`date`, `lastmod`, `categories` dans la langue de l'article, `tags` traduits, `translationKey`, `faq` avec 3+ questions, `image` + `imageAlt` + `imageCredit`)
-- `author: [ID-AUTEUR]` (slug qui correspond a une cle de `data/authors.yaml`). **C'est l'auteur unique du blog**, celui de sa thematique : `helene-vasseur` pour le the, `marion-kieffer` pour la patisserie et le gouter, `bastien-delorme` pour le brunch et le petit dejeuner
+- `author: [ID-AUTEUR]` (slug qui correspond a une cle de `data/authors.yaml`). **C'est l'auteur unique du blog**, celui de sa thematique (ex: `bastien-delorme`)
 - H2/H3 descriptifs
 - Un tableau ou une liste
 - `draft: false`
@@ -390,9 +390,9 @@ Remplir la section "Contexte du site" du CLAUDE.md avec toutes les informations 
 - URL (GitHub Pages ou domaine custom)
 - Couleurs (codes hex)
 - Polices choisies
-- Categories (mapping FR ↔ EN obligatoire, ex: "Thes verts / Green teas")
+- Categories (mapping FR ↔ EN obligatoire, ex: "Boissons du matin / Morning drinks")
 - Langue principale (la langue secondaire EN est toujours active)
-- **Auteur du site** : ID de **l'unique** auteur du blog, celui de sa thematique. C'est un persona du parc, il signe tous les articles de ce blog et aucun article d'un autre blog. Sa fiche est dans le Drive perso, `100 Areas/seo_freelance/Reddit/parc-reddit/personas/`, et elle prime sur le YAML
+- **Auteur du site** : ID de **l'unique** auteur du blog, celui de sa thematique. Il signe tous les articles de ce blog
 
 ## Etape 10 — Build de verification
 

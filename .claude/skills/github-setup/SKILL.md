@@ -29,20 +29,14 @@ brew install gh
 
 ### Authentification GitHub
 
-**GARDE-FOU CRITIQUE, a executer avant toute commande `gh`.** Cette machine porte DEUX comptes GitHub dans `gh` :
-
-- `DamienBo59` : le compte **perso**, celui de ce parc. C'est le seul autorise ici.
-- `analytics-ds` : le compte **datashake**, dont le token keyring est invalide. Il redevient regulierement le compte actif tout seul.
-
-Un blog perso pousse par erreur sur `analytics-ds` atterrirait dans l'organisation de l'agence. Donc, systematiquement :
+**GARDE-FOU CRITIQUE, a executer avant toute commande `gh`.** Si plusieurs comptes GitHub sont connectes dans `gh`, verifier que le compte actif est bien le proprietaire de ce repo (voir `CLAUDE.local.md` s'il existe) :
 
 ```bash
 gh auth status
-gh auth switch -u DamienBo59
-gh api user --jq '.login'   # doit repondre exactement : DamienBo59
+gh api user --jq '.login'   # doit repondre le compte proprietaire du repo
 ```
 
-Si la derniere commande ne repond pas `DamienBo59`, **STOP** et avertir l'utilisateur. Ne jamais continuer.
+Si ce n'est pas le bon compte, basculer avec `gh auth switch -u <compte>`. Si la verification echoue encore, **STOP** et avertir l'utilisateur. Ne jamais continuer.
 
 Verifier ensuite dans la sortie de `gh auth status` que `Token scopes` contient `workflow` (necessaire pour pusher `.github/workflows/`). Si le scope `workflow` est absent, ou si l'utilisateur n'est pas connecte, lancer l'authentification avec le scope workflow :
 
@@ -56,7 +50,7 @@ gh auth login -s workflow
 
 Demander a l'utilisateur :
 
-- **Nom du repo** : **nomenclature obligatoire du parc perso : `pbn-geo-<nom>`** (ex: `pbn-geo-brunch-story`). Le compte `DamienBo59` melange blogs et outils (extensions Raycast, etc.), ce prefixe est ce qui permet de distinguer un blog du parc d'un repo d'outil. Proposer le nom du site en slug prefixe. L'utilisateur peut choisir autre chose, mais garder le prefixe.
+- **Nom du repo** : proposer le nom du site en slug (voir `CLAUDE.local.md` s'il existe pour une convention de nommage). L'utilisateur peut choisir autre chose.
 - **Visibilite** : **toujours public**. GitHub Pages ne fonctionne pas sur les repos prives sans plan GitHub Pro/Team. Ne pas proposer l'option prive sauf si l'utilisateur le demande explicitement et confirme qu'il a un plan payant
 - **Description** : courte description du repo (reprendre la description du site dans le CLAUDE.md)
 
@@ -127,7 +121,7 @@ gh run list --limit 1
 
 Informer l'utilisateur :
 - URL du repo : `https://github.com/{owner}/{repo}`
-- URL du site : `https://DamienBo59.github.io/{repo}/` (tant qu'aucun domaine n'est branche)
+- URL du site : `https://{owner}.github.io/{repo}/` (tant qu'aucun domaine n'est branche)
 - Le premier deploiement peut prendre 1-2 minutes
 - L'utilisateur peut suivre le deploiement dans l'onglet Actions du repo
 

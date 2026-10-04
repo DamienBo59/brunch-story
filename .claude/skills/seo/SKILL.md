@@ -89,7 +89,7 @@ Le cocon semantique est la strategie d'architecture de contenu du site. Les cate
 | Action | Description |
 |--------|------------|
 | Verifier le maillage | Lister tous les articles et leurs liens internes. Verifier que chaque article a au minimum 3 liens internes. Identifier les opportunites manquantes |
-| Maillage intra-categorie | Verifier que les articles d'une meme categorie se linkent entre eux. Proposer les liens manquants avec les ancres optimisees (ancre = mot-cle de l'article cible) |
+| Maillage intra-categorie | Verifier que les articles d'une meme categorie se linkent entre eux. Proposer les liens manquants avec les ancres optimisees (ancre = mot-cle de l'article vise) |
 | Maillage inter-categories | Identifier les articles de categories differentes qui ont des sujets complementaires et proposer des liens croises |
 | Liens vers la page categorie | Verifier que les articles contiennent un lien vers leur page categorie parente. Proposer les ajouts si manquants |
 | Corriger les articles orphelins | Identifier les articles qui ne recoivent aucun lien entrant et proposer des liens depuis d'autres articles pertinents |

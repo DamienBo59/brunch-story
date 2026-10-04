@@ -43,7 +43,7 @@
 #
 # CHAMPS EDITABLES PAR L'HUMAIN
 # -----------------------------
-#   kw              (obligatoire) Mot-cle principal SEO cible. Langue principale du blog.
+#   kw              (obligatoire) Mot-cle principal SEO vise. Langue principale du blog.
 #   category        (obligatoire) Categorie du blog. Doit matcher une categorie definie
 #                                 dans le hugo.toml (en langue principale).
 #   volume          (informatif)  Volume mensuel de recherche. Aide l'humain a prioriser,

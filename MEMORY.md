@@ -8,7 +8,7 @@ Repere indicatif : 4 articles par semaine, jamais bloquant.
 
 Lancement du blog, 5 articles publies le meme jour (FR + EN). Ecart assume au repere hebdomadaire : un site neuf n'a aucune position a proteger, et il lui faut un socle par categorie pour que la home et les rubriques ne soient pas vides. **A ne pas reproduire** une fois le site lance, le rythme passe a 2 par semaine via la roadmap.
 
-| Article FR | Categorie | Mot-cle cible |
+| Article FR | Categorie | Mot-cle vise |
 |---|---|---|
 | [Cafe brunch : quelle quantite prevoir et comment le reussir](https://www.brunch-story.fr/blog/cafe-brunch/) | Boissons du matin | `cafe brunch` |
 | [C'est quoi un brunch : definition, horaires et composition](https://www.brunch-story.fr/blog/c-est-quoi-un-brunch/) | Organiser un brunch | `c'est quoi un brunch` |
@@ -22,13 +22,13 @@ Suite : voir la semaine du 2026-09-12, la roadmap de 49 entrees a ete remplacee.
 
 ## Semaine du 2026-09-12
 
-**Roadmap reconstruite sur le corpus de septembre.** Les 49 entrees baties sur le corpus d'aout (87 mots-cles) sont remplacees par **60 entrees** issues du corpus de septembre (1 906 mots-cles, 632 en longue traine ciblable), soit **72 006 de volume mensuel cible** contre des entrees a 200-700 auparavant. 12 entrees par rubrique, du 2026-09-12 au 2027-03-23, mardi et vendredi.
+**Roadmap reconstruite sur le corpus de septembre.** Les 49 entrees baties sur le corpus d'aout (87 mots-cles) sont remplacees par **60 entrees** issues du corpus de septembre (1 906 mots-cles, 632 en longue traine ciblable), soit **72 006 de volume mensuel vise** contre des entrees a 200-700 auparavant. 12 entrees par rubrique, du 2026-09-12 au 2027-03-23, mardi et vendredi.
 
-Filtres : 3 mots ou plus, volume 150 a 3 000, KGR sous 0,6 ; frontiere `gouter-gourmand.fr` respectee (gateaux, cookies, tartes et galette des rois laisses a P02, brioche et pain perdu gardes ici) ; requetes produit a SERP de marques ecartees en frontal ; garde-fou cannibalisation passe contre les 9 articles publies, les 49 anciennes entrees et les 60 nouvelles entre elles. Controles : 0 couple cannibalisant, 0 paire consecutive de meme categorie, au moins 3 categories sur toute fenetre de 5.
+Filtres : 3 mots ou plus, volume 150 a 3 000, KGR sous 0,6 ; perimetre du blog respecte (gateaux, cookies, tartes et galette des rois ecartes, brioche et pain perdu gardes ici) ; requetes produit a SERP de marques ecartees en frontal ; garde-fou cannibalisation passe contre les 9 articles publies, les 49 anciennes entrees et les 60 nouvelles entre elles. Controles : 0 couple cannibalisant, 0 paire consecutive de meme categorie, au moins 3 categories sur toute fenetre de 5.
 
 **5 articles publies (FR + EN), un par rubrique.** Deuxieme et dernier ecart au repere hebdomadaire, pour la meme raison qu'au lancement : chaque rubrique gagne un second article et sort de l'etat a un seul papier. Le rythme revient ensuite a 2 par semaine.
 
-| Article FR | Categorie | Mot-cle cible | Volume |
+| Article FR | Categorie | Mot-cle vise | Volume |
 |---|---|---|---|
 | [Comment faire un smoothie : methode et proportions](https://www.brunch-story.fr/blog/comment-faire-un-smoothie/) | Boissons du matin | `comment faire un smoothie` | 2 636 |
 | [Recette avocado toast : la methode et les proportions](https://www.brunch-story.fr/blog/recette-avocado-toast/) | Oeufs et sale | `recette avocado toast` | 1 455 |
@@ -42,11 +42,11 @@ Les 5 versions EN correspondantes sont publiees sous `/en/blog/`. 72 liens inter
 
 ## Semaine du 2026-09-16
 
-**5 articles publies (FR + EN), un par rubrique, en publication immediate.** Lot demande explicitement par Damien le 2026-09-16, produit en mode A de `/create-article-seo` (roadmap du blog, 5 entrees `todo` les plus anciennes) mais avec `publishDate` ramenee au jour meme au lieu des `scheduled_date` du 15 au 29 septembre. Les entrees passent donc directement en `status: done` dans la roadmap, leur `scheduled_date` d'origine etant conservee pour garder la trace de l'ecart.
+**5 articles publies (FR + EN), un par rubrique, en publication immediate.** Lot demande explicitement le 2026-09-16, produit en mode A de `/create-article-seo` (roadmap du blog, 5 entrees `todo` les plus anciennes) mais avec `publishDate` ramenee au jour meme au lieu des `scheduled_date` du 15 au 29 septembre. Les entrees passent donc directement en `status: done` dans la roadmap, leur `scheduled_date` d'origine etant conservee pour garder la trace de l'ecart.
 
-**Troisieme ecart au repere hebdomadaire de 4 articles/semaine**, apres ceux du 2026-09-06 et du 2026-09-12 qui etaient annonces comme les deux derniers. Celui-ci est une demande directe, pas une decision de la skill. Le rythme de 2 par semaine reste la cible.
+**Troisieme ecart au repere hebdomadaire de 4 articles/semaine**, apres ceux du 2026-09-06 et du 2026-09-12 qui etaient annonces comme les deux derniers. Celui-ci est une demande directe, pas une decision de la skill. Le rythme de 2 par semaine reste l'objectif.
 
-| Article FR | Categorie | Mot-cle cible | Volume |
+| Article FR | Categorie | Mot-cle vise | Volume |
 |---|---|---|---|
 | [Smoothie fruits rouges : les proportions](https://www.brunch-story.fr/blog/smoothie-fruits-rouges/) | Boissons du matin | `smoothie fruits rouges` | 2 769 |
 | [Pain perdu sans œuf : la methode](https://www.brunch-story.fr/blog/pain-perdu-sans-oeuf/) | Oeufs et sale | `pain perdu sans oeuf` | 2 417 |
@@ -56,19 +56,19 @@ Les 5 versions EN correspondantes sont publiees sous `/en/blog/`. 72 liens inter
 
 Les 5 versions EN sont publiees sous `/en/blog/` : `berry-smoothie`, `eggless-french-toast`, `turkish-breakfast`, `chia-seed-benefits`, `old-fashioned-brioche`. Maillage croise entre les 5 articles du lot, 4 a 5 liens internes contextuels par article, tous verifies sur le site genere.
 
-**Analyse SERP en mode degrade assume** : le MCP `serpapi` n'est pas declare cote perso, donc l'analyse s'est faite par recherche web (titres et snippets), sans fetch des concurrents. Aucun geant ne tient le top 3 sur les 5 requetes.
+**Analyse SERP en mode degrade assume** : le MCP `serpapi` n'est pas disponible, donc l'analyse s'est faite par recherche web (titres et snippets), sans fetch des concurrents. Aucun geant ne tient le top 3 sur les 5 requetes.
 
 **Images : 2 rejets sur 5 au controle visuel**, ce qui confirme la mesure du 2026-09-12. `berry smoothie` a remonte un gobelet McDonald's McCafe, et `brioche bread` un rayon de supermarche avec des sachets Reflets de France : deux visuels de marque qui contredisent en plus l'angle « ce qui se refait mieux chez soi ». Relancer le script avec une autre query ne suffit pas toujours : le registre `hero-sources.json` n'exclut que les photos utilisees par un AUTRE slug, donc un second passage sur le meme slug peut retomber sur la photo rejetee (c'est arrive pour la brioche). La parade est de chercher directement dans l'API Commons et de deposer l'image a la main, puis de corriger l'entree du registre.
 
 **Piege de fuseau horaire sur `publishDate`** : une date seule (`"2026-09-16"`) est lue par Hugo comme minuit **UTC**. Ecrite depuis Paris entre minuit et 2 h du matin, elle est donc dans le futur et `buildFuture: false` masque l'article, sans aucune erreur au build. Le correctif applique est une date horodatee avec fuseau explicite (`"2026-09-15T23:00:00+02:00"`), `date` et `lastmod` restant au 2026-09-16 puisque c'est `.Date` que le theme affiche.
 
-**A traiter, defaut anterieur au lot** : sur toutes les pages EN, les liens de tags pointent vers `/tags/<slug-en>/` au lieu de `/en/tags/<slug-en>/`, soit **63 liens internes en 404**. Les pages cibles existent bien sous `/en/tags/`. La cause est une URL ecrite en dur dans `themes/brunch-story/layouts/_default/single.html` ligne 92 (`{{ "/tags/" | relURL }}`), qui ignore la langue courante. Le defaut touchait deja les 10 articles EN publies avant ce lot, il n'a pas ete corrige ici pour ne pas melanger un changement de theme a une publication.
+**A traiter, defaut anterieur au lot** : sur toutes les pages EN, les liens de tags pointent vers `/tags/<slug-en>/` au lieu de `/en/tags/<slug-en>/`, soit **63 liens internes en 404**. Les pages de destination existent bien sous `/en/tags/`. La cause est une URL ecrite en dur dans `themes/brunch-story/layouts/_default/single.html` ligne 92 (`{{ "/tags/" | relURL }}`), qui ignore la langue courante. Le defaut touchait deja les 10 articles EN publies avant ce lot, il n'a pas ete corrige ici pour ne pas melanger un changement de theme a une publication.
 
 ## Semaine du 2026-09-20
 
 **5 articles produits (FR + EN), programmes sur les creneaux du cron** (mardi et vendredi, `publishDate` futur, revele par le cron GitHub Actions). Commit `9a42b5f`.
 
-| Date de publication | Article FR | Categorie | Mot-cle cible |
+| Date de publication | Article FR | Categorie | Mot-cle vise |
 |---|---|---|---|
 | 2026-10-02 | [Smoothie au concombre : eviter l'eau verte](https://www.brunch-story.fr/blog/smoothie-concombre/) | Boissons du matin | `smoothie au concombre` |
 | 2026-10-06 | [Bagel saumon avocat : l'ordre de montage](https://www.brunch-story.fr/blog/bagel-saumon-avocat/) | Oeufs et sale | `bagel saumon avocat` |
@@ -76,13 +76,13 @@ Les 5 versions EN sont publiees sous `/en/blog/` : `berry-smoothie`, `eggless-fr
 | 2026-10-13 | [Petit dejeuner sportif : avant ou apres](https://www.brunch-story.fr/blog/petit-dejeuner-sportif/) | Petit dejeuner sain | `petit dejeuner sportif` |
 | 2026-10-27 | [Petit dejeuner espagnol : la realite](https://www.brunch-story.fr/blog/petit-dejeuner-espagnol/) | Organiser un brunch | `petit dejeuner espagnol` |
 
-`recette brioche tressee` (2026-10-16) sautee : elle double `/blog/recette-brioche-a-l-ancienne/`. Laissee `todo`, en attente d'arbitrage de Damien.
+`recette brioche tressee` (2026-10-16) sautee : elle double `/blog/recette-brioche-a-l-ancienne/`. Laissee `todo`, en attente d'arbitrage.
 
 ## Semaine du 2026-10-04
 
 **Lot A, redige dans la nuit du 3 au 4 octobre et finalise le 4** : 2 articles (FR + EN), programmes sur leurs `scheduled_date`.
 
-| Date de publication | Article FR | Categorie | Mot-cle cible | Volume |
+| Date de publication | Article FR | Categorie | Mot-cle vise | Volume |
 |---|---|---|---|---|
 | 2026-10-20 | [Cocktail mimosa : champagne et jus](https://www.brunch-story.fr/blog/cocktail-mimosa/) | Boissons du matin | `cocktail mimosa champagne jus d'orange` | 600 |
 | 2026-10-23 | [Origine du bagel : Pologne, pas Vienne](https://www.brunch-story.fr/blog/origine-du-bagel/) | Oeufs et sale | `origine du bagel` | 880 |
@@ -93,7 +93,7 @@ Versions EN : `/en/blog/mimosa-cocktail/`, `/en/blog/bagel-origin/`. 3 liens int
 
 **Lot B, produit le 4 octobre** : 5 articles (FR + EN), programmes sur leurs `scheduled_date`. Maillage croise dans le lot, uniquement du plus recent vers le plus ancien.
 
-| Date de publication | Article FR | Categorie | Mot-cle cible | Volume |
+| Date de publication | Article FR | Categorie | Mot-cle vise | Volume |
 |---|---|---|---|---|
 | 2026-10-30 | [Calories d'un cafe au lait : le vrai calcul](https://www.brunch-story.fr/blog/calories-cafe-au-lait/) | Petit dejeuner sain | `calories d'un cafe au lait` | 1 300 |
 | 2026-11-03 | [Pain perdu recette ancienne : la methode](https://www.brunch-story.fr/blog/pain-perdu-recette-ancienne/) | Pancakes et sucre | `pain perdu recette ancienne` | 2 000 |

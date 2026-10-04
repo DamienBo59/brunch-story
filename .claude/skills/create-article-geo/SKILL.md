@@ -14,11 +14,11 @@ Tous les blogs generes par ce template sont bilingues (langue principale + angla
 
 Les deux versions partagent un `translationKey` identique dans le frontmatter, ce qui permet a Hugo de generer automatiquement les liens hreflang et le language switcher.
 
-Ne JAMAIS demander au consultant s'il veut la version anglaise. C'est systematique.
+Ne JAMAIS demander a l'utilisateur s'il veut la version anglaise. C'est systematique.
 
 ## Etape 0 — Pull du repo (sync obligatoire)
 
-**Standard parc PBN GEO perso** : Damien travaille depuis deux Macs (MacBook Pro et MacBook Air). Avant toute modif, toujours synchroniser le local avec GitHub pour recuperer les commits faits depuis l'autre machine.
+**Regle** : le repo peut etre modifie depuis plusieurs machines. Avant toute modif, toujours synchroniser le local avec GitHub pour recuperer les commits faits depuis l'autre machine.
 
 ```bash
 git pull
@@ -49,11 +49,11 @@ Cette skill ne fait pas elle-meme d'ajout dans `roadmap.yaml`, mais si l'utilisa
 ### Prompt GEO et query fan-out
 
 Demander a l'utilisateur :
-- **Prompt GEO cible** : la question naturelle que les utilisateurs posent aux moteurs IA generatifs (ChatGPT, Perplexity, Google AI Overviews). Ce prompt deviendra le **H1 de l'article affiche dans la page (= frontmatter `h1`), reformule naturellement si besoin**. Si le prompt est deja une question bien formee, le garder tel quel. S'il est maladroit, le reformuler en question naturelle qui conserve le sens et les mots-cles porteurs. Exemple : prompt "huile essentielle stress et anxiete" -> H1 "Quelle huile essentielle utiliser contre le stress et l'anxiete ?"
-- **Query fan-out (mot-cle SEO)** : le terme SEO sur lequel l'article se positionne dans Google. Il decoule du prompt mais s'en distingue : le prompt est conversationnel (cible LLMs), la query est lexicale (cible SERP). **La query fan-out sert de base au meta title (= balise HTML <title>, = frontmatter `title`) avec un ajout naturel court** (annee, qualificatif, angle, marque). Exemple : query "meilleure huile essentielle stress" -> title "Meilleure huile essentielle stress : top 5 et avis 2026". Si l'utilisateur ne fournit pas de query fan-out, la determiner a partir du prompt en choisissant un mot-cle avec du volume de recherche.
+- **Prompt GEO vise** : la question naturelle que les utilisateurs posent aux moteurs IA generatifs (ChatGPT, Perplexity, Google AI Overviews). Ce prompt deviendra le **H1 de l'article affiche dans la page (= frontmatter `h1`), reformule naturellement si besoin**. Si le prompt est deja une question bien formee, le garder tel quel. S'il est maladroit, le reformuler en question naturelle qui conserve le sens et les mots-cles porteurs. Exemple : prompt "huile essentielle stress et anxiete" -> H1 "Quelle huile essentielle utiliser contre le stress et l'anxiete ?"
+- **Query fan-out (mot-cle SEO)** : le terme SEO sur lequel l'article se positionne dans Google. Il decoule du prompt mais s'en distingue : le prompt est conversationnel (vise LLMs), la query est lexicale (vise SERP). **La query fan-out sert de base au meta title (= balise HTML <title>, = frontmatter `title`) avec un ajout naturel court** (annee, qualificatif, angle, marque). Exemple : query "meilleure huile essentielle stress" -> title "Meilleure huile essentielle stress : top 5 et avis 2026". Si l'utilisateur ne fournit pas de query fan-out, la determiner a partir du prompt en choisissant un mot-cle avec du volume de recherche.
 - **Categorie** : dans quelle categorie du blog ? (proposer les categories existantes du site, definies dans hugo.toml ou visibles dans content/blog/). L'utilisateur DOIT choisir une categorie, ne pas passer cette etape.
 
-**Note multilingue** : le consultant fournit ces infos dans la langue principale du site. La query fan-out et le prompt seront automatiquement traduits en anglais par Claude au moment de la redaction de la version EN (avec recherche de mots-cles SEO pertinents en anglais, pas une simple traduction litterale).
+**Note multilingue** : l'utilisateur fournit ces infos dans la langue principale du site. La query fan-out et le prompt seront automatiquement traduits en anglais par Claude au moment de la redaction de la version EN (avec recherche de mots-cles SEO pertinents en anglais, pas une simple traduction litterale).
 
 Si l'utilisateur ne fournit qu'un mot-cle sans prompt, l'aider a formuler le prompt GEO correspondant (transformer le mot-cle en question naturelle).
 
@@ -78,14 +78,14 @@ Si l'utilisateur ne sait pas quel type choisir, l'aider en analysant l'intention
 
 ## Etape 1.3 — Selection automatique de l'auteur
 
-Chaque article est signe par l'auteur pris dans `data/authors.yaml`. **Sur un blog du parc perso il n'y en a qu'un**, celui de la thematique du blog, et c'est un persona qui porte aussi un compte Reddit. **Lire sa fiche persona avant de rediger** (Drive perso, `100 Areas/seo_freelance/Reddit/parc-reddit/personas/`) : elle porte sa voix et surtout ses faits engages, qu'un article ne doit jamais contredire.
+Chaque article est signe par l'auteur pris dans `data/authors.yaml`. **Ce blog n'en a qu'un**, celui de sa thematique. Respecter sa voix et les faits qu'il a deja affirmes dans ses articles : un nouvel article ne doit jamais les contredire.
 
 ### Algorithme de selection
 
 1. Lire `data/authors.yaml` (Hugo : `.Site.Data.authors`)
 2. Pour chaque auteur, comparer les champs `topics` et `expertise` avec :
    - La query fan-out (mot-cle SEO)
-   - Le prompt GEO cible
+   - Le prompt GEO vise
    - La categorie de l'article
 3. Calculer un score de correspondance (nombre de matches mot a mot ou semantiques)
 4. Selectionner l'auteur avec le score le plus eleve
@@ -95,15 +95,14 @@ Chaque article est signe par l'auteur pris dans `data/authors.yaml`. **Sur un bl
 
 | Sujet article | Auteur selectionne | Raison |
 |---------------|-------------------|--------|
-| "Quelle temperature pour un the vert" | helene-vasseur | topics "the vert", "temperature d'infusion" |
-| "Rattraper une pate a choux trop liquide" | marion-kieffer | topics "pate a choux", expertise "Pates de base" |
 | "Brunch a Lyon, les formules qui valent le prix" | bastien-delorme | topics "brunch", "formule brunch" |
+| "Cafe filtre ou espresso pour un brunch" | bastien-delorme | topics "cafe filtre", expertise "Cafes de specialite" |
 
-⚠️ **En pratique, sur un blog du parc perso, il n'y a qu'UN auteur** : celui de la thematique du blog. La selection automatique n'a donc rien a arbitrer, elle confirme. Si le sujet d'un article ne correspond pas a l'auteur du blog, ce n'est pas un probleme d'auteur, **c'est que l'article est hors sujet pour ce blog** : ne pas le publier ici. La table ci-dessus sert a comprendre le mecanisme, pas a choisir entre trois signatures.
+⚠️ **En pratique, ce blog n'a qu'UN auteur** : la selection automatique n'a rien a arbitrer, elle confirme. Si le sujet d'un article ne correspond pas a l'auteur du blog, ce n'est pas un probleme d'auteur, **c'est que l'article est hors sujet pour ce blog** : ne pas le publier ici.
 
-### Confirmation au consultant
+### Confirmation a l'utilisateur
 
-Apres selection, afficher au consultant :
+Apres selection, afficher a l'utilisateur :
 
 ```
 Auteur selectionne automatiquement : [nom] ([ID])
@@ -112,14 +111,14 @@ Raison : [liste des topics/expertises matches]
 Confirmer ? (oui par defaut / changer pour [liste des autres auteurs])
 ```
 
-Le consultant peut override manuellement en indiquant un autre ID d'auteur. Si plusieurs auteurs ont des scores proches, les proposer en choix.
+L'utilisateur peut override manuellement en indiquant un autre ID d'auteur. Si plusieurs auteurs ont des scores proches, les proposer en choix.
 
 ### Injection dans le frontmatter
 
 Utiliser l'ID (slug) de l'auteur, pas son nom complet :
 
 ```yaml
-author: helene-vasseur
+author: bastien-delorme
 ```
 
 Hugo resoudra automatiquement les infos (nom, avatar, bio, role) depuis `data/authors.yaml` dans les templates (`seo-head.html` pour le JSON-LD, `single.html` pour le bloc auteur en bas d'article).
@@ -128,35 +127,32 @@ Hugo resoudra automatiquement les infos (nom, avatar, bio, role) depuis `data/au
 
 ## Etape 1.5 — Recuperation automatique de l'image hero
 
-> **Cascade des sources d'image (parc perso, 2026-09-12).** Le script
+> **Cascade des sources d'image (2026-09-12).** Le script
 > `.claude/scripts/fetch-image.sh` essaie dans cet ordre : **Pexels**, puis **Unsplash**,
 > puis **Wikimedia Commons**, puis **Openverse**, puis un visuel de charte genere en local
 > par `.claude/scripts/make-placeholder.py`. Il ne rend jamais la main sans visuel.
 >
-> **Openverse n'est plus la source nominale, il est l'avant-dernier recours.** Deux raisons :
-> la mesure du parc pro (sur 45 heros, 10 photos franchement hors sujet, 15 generiques, et
-> des URLs mortes), et le fait qu'**`api.openverse.org` est injoignable depuis le Mac de
-> Damien** (timeout, et 403 sur `openverse.org`, mesure du 2026-09-12). C'est **Wikimedia
-> Commons** qui porte donc reellement la cascade tant qu'aucune cle n'est posee.
+> **Openverse n'est plus la source nominale, il est l'avant-dernier recours.** Ses resultats
+> sont souvent hors sujet ou generiques, et **`api.openverse.org` est souvent injoignable**
+> (timeout, et 403 sur `openverse.org`, mesure du 2026-09-12). C'est **Wikimedia Commons**
+> qui porte la cascade quand aucune cle n'est disponible.
 >
-> Les cles `PEXELS_API_KEY` et `UNSPLASH_ACCESS_KEY` sont lues dans l'environnement ou dans
-> le `.env` du **Drive perso uniquement**, **jamais dans le repo** : les repos du parc sont
-> publics, et le parc perso n'emprunte rien au Drive datashake. **Au 2026-09-12 aucune des
-> deux n'existe cote perso** : la cascade demarre donc a Commons, et l'article sort quand meme.
+> Les cles `PEXELS_API_KEY` et `UNSPLASH_ACCESS_KEY` sont lues dans l'environnement, ou dans
+> le fichier `.env` designe par `IMAGE_KEYS_ENV_FILE`, **jamais dans le repo** : il est
+> public. Sans cle, la cascade demarre a Commons, et l'article sort quand meme.
 >
 > Le script tient un registre `.claude/hero-sources.json` qui **empeche deux articles de
 > porter la meme photo**. Il est versionne, il ne contient que des identifiants publics.
 >
 > ⚠️ **Le controle visuel de l'image est obligatoire avant publication, quelle que soit la
-> banque.** Mesure du 2026-09-12 sur les 10 premiers heros du parc perso : **3 images a
-> rejeter** malgre un titre de fichier correct, dont un plateau de cantine scolaire pour
-> « plateau petit dejeuner », un muesli chocolate en tete d'un article sur l'index
-> glycemique bas (l'image contredisait le texte), et un fichier intitule « Chamomile Flower »
-> qui **montrait une tout autre plante**. Le titre ne garantit rien sur le contenu.
+> banque.** Mesure du 2026-09-12 sur les 10 premiers heros : **3 images a rejeter** malgre
+> un titre de fichier correct, dont un plateau de cantine scolaire pour « plateau petit
+> dejeuner » et un muesli chocolate en tete d'un article sur l'index glycemique bas (l'image
+> contredisait le texte). Le titre ne garantit rien sur le contenu.
 
 
 
-Chaque article doit obligatoirement avoir une image hero (utilisee dans les cards du blog, la bannière de l'article, og:image et le schema Article JSON-LD). Le systeme recupere automatiquement une image libre de droit compatible usage commercial depuis l'API publique Openverse (federe Wikimedia, Flickr, etc.). Aucune cle API, aucune action manuelle du consultant.
+Chaque article doit obligatoirement avoir une image hero (utilisee dans les cards du blog, la bannière de l'article, og:image et le schema Article JSON-LD). Le systeme recupere automatiquement une image libre de droit compatible usage commercial via `.claude/scripts/fetch-image.sh` (cascade decrite ci-dessus). Aucune action manuelle de l'utilisateur.
 
 ### Determiner la query image
 
@@ -201,13 +197,13 @@ imageCredit: "Photo par John Doe via Wikimedia (CC BY-SA 3.0)"
 ### Fallback en cas d'echec
 
 Si le script renvoie un exit code non-zero (aucune image trouvee) :
-1. Proposer au consultant une query alternative (plus large, plus generique, categorie de l'article)
+1. Proposer a l'utilisateur une query alternative (plus large, plus generique, categorie de l'article)
 2. Relancer le script avec la nouvelle query
-3. Si toujours echec apres 2 tentatives, demander au consultant de fournir manuellement une URL d'image ou continuer sans image (deconseille)
+3. Si toujours echec apres 2 tentatives, demander a l'utilisateur de fournir manuellement une URL d'image ou continuer sans image (deconseille)
 
 ### Verification visuelle
 
-Afficher au consultant le chemin de l'image telechargee et proposer de la visualiser (ex: `open static/images/blog/slug.webp`). Si l'image ne convient pas visuellement, reessayer avec une query differente.
+Afficher a l'utilisateur le chemin de l'image telechargee et proposer de la visualiser (ex: `open static/images/blog/slug.webp`). Si l'image ne convient pas visuellement, reessayer avec une query differente.
 
 ## Etape 2 — Audit des contenus existants et maillage interne
 
@@ -220,7 +216,7 @@ Lister tous les articles existants dans `content/blog/` en lisant le sitemap (`c
 
 ### Verification de cannibalisation
 
-Verifier qu'aucun article existant ne cible deja le meme mot-cle principal ou le meme prompt GEO. Si cannibalisation detectee, prevenir l'utilisateur et proposer un angle different.
+Verifier qu'aucun article existant ne vise deja le meme mot-cle principal ou le meme prompt GEO. Si cannibalisation detectee, prevenir l'utilisateur et proposer un angle different.
 
 ### Identification des liens internes
 
@@ -231,13 +227,13 @@ Identifier **au minimum 3 articles existants** thematiquement proches du nouvel 
 
 **Regles de maillage interne :**
 - **Minimum 3 liens internes** vers d'autres articles du blog, inseres de maniere contextuelle dans le corps de l'article
-- L'**ancre du lien** (le texte cliquable) doit contenir le **mot-cle principal de l'article cible**, pas de "cliquez ici" ou "lire aussi"
+- L'**ancre du lien** (le texte cliquable) doit contenir le **mot-cle principal de l'article vise**, pas de "cliquez ici" ou "lire aussi"
 - Les liens doivent etre **naturels et contextuels** : inseres dans une phrase qui a du sens, pas en liste en bas de page
 - Repartir les liens dans differentes sections de l'article (pas tous au meme endroit)
 - **Maillage intra-langue uniquement** : un article FR ne mail QUE vers des articles FR (`/blog/...`), un article EN ne mail QUE vers des articles EN (`/en/blog/...`). Jamais de maillage cross-langue dans le corps de l'article. Le language switcher du header gere le lien vers la traduction
 
 Exemple :
-- Si l'article cible s'appelle "Les bienfaits du the vert", l'ancre doit etre quelque chose comme : "Comme nous l'avons vu dans notre article sur les **[bienfaits du the vert](/blog/bienfaits-the-vert/)**, ..."
+- Si l'article vise s'appelle "Les bienfaits du the vert", l'ancre doit etre quelque chose comme : "Comme nous l'avons vu dans notre article sur les **[bienfaits du the vert](/blog/bienfaits-the-vert/)**, ..."
 - PAS : "Pour en savoir plus, [cliquez ici](/blog/bienfaits-the-vert/)"
 
 Si le site a moins de 3 articles, faire le maximum avec ce qui existe. Si le site est vide (premier article), noter dans un commentaire les futurs liens a ajouter quand d'autres articles seront publies.
@@ -264,14 +260,14 @@ Les deux versions ont le meme schema de frontmatter, avec le champ `translationK
 | Champ | Regle |
 |-------|-------|
 | `translationKey` | **OBLIGATOIRE**. Identique entre FR et EN. Format : slug-article-generique (ex: `bienfaits-the-vert`). Ce champ permet a Hugo de lier les 2 versions et de generer le hreflang et le language switcher |
-| `title` | **= meta title HTML (balise <title>) = query fan-out + ajout naturel** dans la langue de l'article (annee, qualificatif, angle, marque). Cible la SERP classique. **Le budget de 60 caracteres porte sur le title RENDU**, suffixe du theme compris (` | Brunch Story` = 15 car, ` | Mamie-Thé` = 12 car), donc **45 caracteres au maximum dans le frontmatter** pour brunch-story et 48 pour mamie-the. Ne jamais ecrire le nom du site dans le frontmatter, le theme l'ajoute. Defaut trouve le 2026-09-12 : les 20 articles du parc perso rendaient 64 a 88 caracteres. (cf skill `/tech-title`). Exemple : "Meilleure huile essentielle stress : top 5 et avis 2026" |
-| `h1` | **= H1 affiche dans la page = prompt GEO cible reformule naturellement si besoin** dans la langue de l'article (FR : question naturelle en francais, EN : question naturelle en anglais). Garder le prompt tel quel s'il est deja une question bien formee, le reformuler en question naturelle s'il est maladroit. Le layout Hugo doit afficher `h1` en titre principal de l'article (et fallback sur `title` si `h1` non renseigne) |
+| `title` | **= meta title HTML (balise <title>) = query fan-out + ajout naturel** dans la langue de l'article (annee, qualificatif, angle, marque). Vise la SERP classique. **Le budget de 60 caracteres porte sur le title RENDU**, suffixe du theme compris (` | Brunch Story` = 15 car), donc **45 caracteres au maximum dans le frontmatter**. Ne jamais ecrire le nom du site dans le frontmatter, le theme l'ajoute. Defaut trouve le 2026-09-12 : les articles rendaient 64 a 88 caracteres. (cf skill `/tech-title`). Exemple : "Meilleure huile essentielle stress : top 5 et avis 2026" |
+| `h1` | **= H1 affiche dans la page = prompt GEO vise reformule naturellement si besoin** dans la langue de l'article (FR : question naturelle en francais, EN : question naturelle en anglais). Garder le prompt tel quel s'il est deja une question bien formee, le reformuler en question naturelle s'il est maladroit. Le layout Hugo doit afficher `h1` en titre principal de l'article (et fallback sur `title` si `h1` non renseigne) |
 | `description` | Meta description optimisee pour la SERP dans la langue de l'article. Max 140 caracteres, contient la query fan-out de la langue |
 | `date` | Date du jour (YYYY-MM-DD). Identique entre FR et EN |
 | `lastmod` | Date du jour (YYYY-MM-DD), identique a `date` a la creation |
 | `categories` | La categorie choisie, **dans la langue de l'article** (FR : "Thes verts", EN : "Green teas"). Le mapping FR↔EN est documente dans le CLAUDE.md du site |
 | `tags` | 3-6 tags pertinents, **dans la langue de l'article** (traduits en EN) |
-| `author` | **ID-slug de l'auteur** unique du blog (ex: `helene-vasseur`), cle de `data/authors.yaml`. Meme ID pour les 2 versions FR et EN (les libelles jobTitle/role/bio sont automatiquement bilingues via le YAML) |
+| `author` | **ID-slug de l'auteur** unique du blog (ex: `bastien-delorme`), cle de `data/authors.yaml`. Meme ID pour les 2 versions FR et EN (les libelles jobTitle/role/bio sont automatiquement bilingues via le YAML) |
 | `image` | Chemin vers l'image hero (OBLIGATOIRE, rempli automatiquement a l'etape 1.5 par `fetch-image.sh`). **Meme image pour FR et EN** (on ne double pas le telechargement) |
 | `imageAlt` | Texte alt de l'image (OBLIGATOIRE). **Traduit dans la langue de l'article** (FR : en francais, EN : en anglais). Max 125 caracteres |
 | `imageCredit` | Credit photo (OBLIGATOIRE, rempli automatiquement). Meme credit dans les 2 langues |
@@ -284,8 +280,8 @@ Ces regles sont fondamentales pour que l'article soit cite par les moteurs IA ge
 
 | Regle | Detail |
 |-------|--------|
-| **H1 = prompt cible reformule** | Le H1 affiche dans la page (frontmatter `h1`) reprend le prompt cible reformule naturellement si besoin. Garder le prompt tel quel s'il est deja une question bien formee. Reformuler en question naturelle s'il est maladroit. Jamais transforme en mot-cle SEO. Cible les LLMs |
-| **Meta title (HTML <title>) = query + ajout naturel** | Le meta title (frontmatter `title`) commence par la query fan-out (telle quelle ou tres legerement reformulee pour la fluidite) suivie d'un ajout naturel court (annee, qualificatif, angle, marque). Cible la SERP, distinct du H1 |
+| **H1 = prompt vise reformule** | Le H1 affiche dans la page (frontmatter `h1`) reprend le prompt vise reformule naturellement si besoin. Garder le prompt tel quel s'il est deja une question bien formee. Reformuler en question naturelle s'il est maladroit. Jamais transforme en mot-cle SEO. Vise les LLMs |
+| **Meta title (HTML <title>) = query + ajout naturel** | Le meta title (frontmatter `title`) commence par la query fan-out (telle quelle ou tres legerement reformulee pour la fluidite) suivie d'un ajout naturel court (annee, qualificatif, angle, marque). Vise la SERP, distinct du H1 |
 | **Query fan-out dans le body** | La query fan-out (mot-cle SEO) doit apparaitre dans le premier paragraphe et dans les variations des H2 |
 | **1 paragraphe = 1 idee** | Chaque paragraphe traite d'une seule idee distincte. Ne jamais melanger plusieurs concepts dans un meme paragraphe. Cela facilite l'extraction par les LLMs |
 | **Quick summary auto-suffisant** | Le bloc "En bref" est le bloc le plus critique : les LLMs l'extraient en priorite. Il doit etre auto-suffisant (comprehensible seul) et contenir les faits cles avec des donnees chiffrees |
@@ -302,7 +298,7 @@ Ces regles sont fondamentales pour que l'article soit cite par les moteurs IA ge
 | Densite mot-cle | 1-2% (query fan-out) |
 | Mots-cles en gras | Oui, `**mot-cle**` |
 | Ton | Impersonnel (pas de je/tu/nous/vous) sauf si precise autrement dans le CLAUDE.md |
-| Liens internes | Min. 3 liens contextuels vers des articles existants (ancre = mot-cle de l'article cible) |
+| Liens internes | Min. 3 liens contextuels vers des articles existants (ancre = mot-cle de l'article vise) |
 | FAQ | 3-5 questions en fin d'article |
 | Separateurs | JAMAIS de separateur horizontal (---) entre les sections |
 | Tirets | JAMAIS de tiret cadratin ni demi-cadratin. Utiliser des virgules, des points ou reformuler |
@@ -322,11 +318,11 @@ Lire les commentaires HTML `<!-- NOTES POUR CLAUDE -->` en bas du template chois
 - [ ] Les 2 versions sont creees (FR dans `content/blog/`, EN dans `content/en/blog/`)
 - [ ] Les 2 versions partagent le meme `translationKey` dans le frontmatter
 - [ ] Slug = query fan-out en minuscules, tirets, sans accents, dans la langue de l'article
-- [ ] Frontmatter `title` (= meta title HTML) = query fan-out + ajout naturel court. **Budget compte sur le title RENDU** : 45 car max dans le frontmatter pour brunch-story (suffixe ` | Brunch Story`), 48 pour mamie-the. Verifier avec `python3 -c "print(len('<title>') + 15)"`, doit donner 60 au maximum
-- [ ] Frontmatter `h1` (= H1 affiche) = prompt GEO cible reformule naturellement si besoin (question naturelle dans la langue de l'article)
+- [ ] Frontmatter `title` (= meta title HTML) = query fan-out + ajout naturel court. **Budget compte sur le title RENDU** : 45 car max dans le frontmatter (suffixe ` | Brunch Story`). Verifier avec `python3 -c "print(len('<title>') + 15)"`, doit donner 60 au maximum
+- [ ] Frontmatter `h1` (= H1 affiche) = prompt GEO vise reformule naturellement si besoin (question naturelle dans la langue de l'article)
 - [ ] Meta description <= 140 caracteres, contient la query fan-out (mot-cle SEO dans la langue)
 - [ ] Auteur renseigne dans le frontmatter (ID slug correspondant a une cle de `data/authors.yaml`, meme ID pour FR et EN)
-- [ ] H1 = prompt cible reformule (verifie que c'est bien une question naturelle, pas un mot-cle)
+- [ ] H1 = prompt vise reformule (verifie que c'est bien une question naturelle, pas un mot-cle)
 - [ ] `title` et `h1` sont distincts (le `h1` vise les LLMs, le `title` vise la SERP)
 - [ ] Query fan-out presente dans le premier paragraphe
 - [ ] Structure Hn conforme au type (voir notes du template)
@@ -336,7 +332,7 @@ Lire les commentaires HTML `<!-- NOTES POUR CLAUDE -->` en bas du template chois
 - [ ] Donnees chiffrees presentes dans chaque section
 - [ ] Mots-cles en gras
 - [ ] Ton correct
-- [ ] Min. 3 liens internes contextuels (ancres = mots-cles des articles cibles)
+- [ ] Min. 3 liens internes contextuels (ancres = mots-cles des articles vises)
 - [ ] Blocs obligatoires presents selon le type
 - [ ] Quick summary "En bref" auto-suffisant avec donnees chiffrees
 - [ ] Au moins 1 tableau recapitulatif
@@ -398,7 +394,7 @@ git commit -m "Ajout article : [titre de l'article]"
 git push origin main
 ```
 
-**Standard parc PBN GEO perso** : on push toujours direct sur `main`, jamais sur une branche annexe. GitHub Actions deploie automatiquement.
+**Regle** : on push toujours direct sur `main`, jamais sur une branche annexe. GitHub Actions deploie automatiquement.
 
 Si le push est rejete (quelqu'un a push entre-temps) : faire un `git pull --rebase` puis retenter le push. Si conflit : **STOP** et avertir l'utilisateur.
 

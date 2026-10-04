@@ -2,7 +2,7 @@
 
 Blog Hugo bilingue FR/EN sur le brunch et le petit dejeuner, servi sur <https://www.brunch-story.fr/>.
 
-Membre du **parc PBN GEO perso** de Damien (compte GitHub `DamienBo59`, domaines chez o2switch). Aucun lien avec le parc datashake. Doctrine, roots et regles propres a ce blog : lire le `CLAUDE.md`.
+Regles propres a ce blog et fonctionnement des skills : lire le `CLAUDE.md`.
 
 ## En bref
 
@@ -12,7 +12,7 @@ Membre du **parc PBN GEO perso** de Damien (compte GitHub `DamienBo59`, domaines
 | Hebergement | GitHub Pages, deploiement par GitHub Actions |
 | Generateur | Hugo extended 0.161.1 (CI) |
 | Langues | FR a la racine, EN sous `/en/` |
-| Auteur unique | Bastien Delorme (`bastien-delorme`), persona P03 du parc |
+| Auteur unique | Bastien Delorme (`bastien-delorme`) |
 | Roadmap | `roadmap.yaml`, 2 publications par semaine (mardi et vendredi) |
 
 ## Developper en local
@@ -30,7 +30,7 @@ Le build n'utilise **pas** `--baseURL` : le `baseURL` du `hugo.toml` fait foi, c
 
 ## Points de vigilance
 
-- **Un blog = un seul auteur.** Ne jamais ajouter `helene-vasseur` ou `marion-kieffer` dans `data/authors.yaml`.
-- **Aucun lien** vers les autres sites du parc ni vers une cible, tant que Damien ne l'a pas decide explicitement.
+- **Un blog = un seul auteur.** Ne jamais ajouter de seconde signature dans `data/authors.yaml`.
+- **Aucun lien sortant editorial** sans decision explicite.
 - **Pages de categorie** : le dossier doit porter le terme accentue, l'URL sort sans accents (`removePathAccents`).
 - **`llms.txt` est genere par Hugo** (output format `LLMS`), il se met a jour tout seul a chaque publication. Ne pas le recreer en fichier statique.

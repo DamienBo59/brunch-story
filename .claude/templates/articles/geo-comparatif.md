@@ -6,7 +6,7 @@ lastmod: "[YYYY-MM-DD]"
 description: "[Meta description, max 140 caracteres, contient le mot-cle]"
 categories: ["[Categorie dans la langue de l'article]"]
 tags: ["[tag1]", "[tag2]", "[tag3]", "[tag4]", "[tag5]"]
-author: "[ID-AUTEUR — l'auteur unique de ce blog, ex: helene-vasseur. Slug correspondant a une cle de data/authors.yaml]"
+author: "[ID-AUTEUR — l'auteur unique de ce blog, ex: bastien-delorme. Slug correspondant a une cle de data/authors.yaml]"
 image: "[/images/blog/slug.webp — auto-genere par fetch-image.sh]"
 imageAlt: "[Description de l'image en francais, max 125 caracteres — auto-genere]"
 imageCredit: "[Photo par <auteur> via <source> (<licence>) — auto-genere]"

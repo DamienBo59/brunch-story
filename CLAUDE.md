@@ -1,29 +1,13 @@
 # Hugo Site Factory
 
-> **Template du parc PBN GEO PERSO de Damien.** Repris du parc PBN GEO de datashake, monte par Damien, et adapte.
-> Rien ici n'a de lien avec datashake : autres comptes, autres domaines, autres cibles.
+> Si un fichier `CLAUDE.local.md` existe a la racine, le lire aussi : il porte les consignes locales, non versionnees, et elles priment.
 
-## Les roots du parc perso (a ne jamais confondre avec le pro)
+**Regles dures :**
 
-| | Perso, ce repo | Pro, a ne jamais toucher d'ici |
-|---|---|---|
-| Compte GitHub | `DamienBo59` | `analytics-ds` |
-| Registrar et DNS | o2switch (cPanel `zoli6441` sur `molinie.o2switch.net`) | GoDaddy, compte delegue de Ruben Sebag |
-| Chemin local des blogs | `~/code/sites/pbn-perso/<repo>` | `~/code/sites/blogs-geo/` |
-| Chemin local du template | `~/code/sites/_blog-template-perso` | `~/code/sites/_blog-template` |
-| Nomenclature des repos | `pbn-geo-<nom>` | `pbn-geo-<nom>` |
-| Documentation | Drive perso, `100 Areas/seo_freelance/Site web/parc-pbn/` | Drive datashake, `100 Areas/SEO/Site web/pbn geo/` |
-
-**Regles dures du parc perso :**
-
-- **Toujours verifier le compte `gh` actif avant une commande GitHub** : `gh auth switch -u DamienBo59` puis `gh api user --jq '.login'`. Le compte `analytics-ds` reprend la main tout seul sur cette machine. Un blog perso pousse dessus atterrirait dans l'org de l'agence.
-- **Aucun code dans le Drive.** Le Drive ne porte que la documentation. Tout le code vit dans `~/code`.
-- **Les blogs du parc ne se lient jamais entre eux.** Un reseau qui s'auto-cite laisse un footprint evident.
-- **Aucun lien vers la cible finale (le coffee truck d'Aurelie) pour l'instant.** Les sites vivent en autonomie et accumulent historique, impressions et autorite. Le branchement des liens se fera plus tard, progressivement et jamais simultanement.
-- **Ne jamais acheter un domaine sans validation explicite de Damien** (c'est une depense).
-- **Ne jamais mettre une cle API dans un repo** : ils sont publics. Les credentials vivent dans `000 Data p/.claude/secrets/.env` et dans Bitwarden.
+- **Ne jamais mettre une cle API dans le repo** : il est public. Les cles sont lues dans l'environnement.
 - **Un conflit git s'arrete et se signale**, il ne se resout pas tout seul.
-- **Hugo 0.161.1 extended** est la version de reference du parc (alignee sur la flotte pro recente).
+- **Toujours synchroniser avant de modifier** (`git pull --rebase origin main`), et pousser directement sur `main`.
+- **Hugo 0.161.1 extended** est la version de reference, celle du workflow de deploiement.
 
 
 Ce repo est un template pour creer des sites blogs statiques avec Hugo, optimises SEO/GEO, heberges gratuitement sur GitHub Pages.
@@ -44,7 +28,7 @@ Ce repo ne contient pas de site. Il contient les **instructions et templates** p
 
 - `/create-article-geo` : creer un nouvel article de blog (choix parmi plusieurs types : article standard, comparatif). Push automatiquement sur GitHub si le repo est configure
 - `/create-article-auto` : **publication automatique** d'un article evergreen SEO (bilingue FR + EN) a partir de la roadmap `roadmap.yaml`. Full auto, aucun input humain. Conçue pour etre declenchee par une routine planifiee (ex: 2x/semaine a 3h du mat via `/schedule`). C'est la **methode 1** (CCR cloud). Voir section "Publications evergreen automatiques" plus bas
-- `/create-article-seo` : **production polyvalente locale** d'articles evergreen SEO bilingues FR+EN. Tourne sur le Mac de Damien avec Opus 4.7 (analyse SERP avec fetch concurrents reel, maillage cross-batch). 3 modes au choix : (A) suivre la roadmap.yaml du blog, (B) roadmap externe fournie, (C) KW a la demande dans le chat. 3 strategies de scheduling au choix : garder dates source / cascade depuis date X / prochain slot dispo. Articles ecrits avec `publishDate` futur ou today selon mode. C'est la **methode 2** (batch local + GitHub Actions cron). Voir section "Publications evergreen automatiques" plus bas
+- `/create-article-seo` : **production polyvalente locale** d'articles evergreen SEO bilingues FR+EN. Tourne en local avec Opus 4.7 (analyse SERP avec fetch concurrents reel, maillage cross-batch). 3 modes au choix : (A) suivre la roadmap.yaml du blog, (B) roadmap externe fournie, (C) KW a la demande dans le chat. 3 strategies de scheduling au choix : garder dates source / cascade depuis date X / prochain slot dispo. Articles ecrits avec `publishDate` futur ou today selon mode. C'est la **methode 2** (batch local + GitHub Actions cron). Voir section "Publications evergreen automatiques" plus bas
 - `/seo-setup` : generer ou mettre a jour les fichiers SEO techniques de base (robots.txt, llms.txt, sitemap, structured data)
 - `/seo` : mode interactif pour modifier/ajouter des elements SEO (meta tags, JSON-LD, audit on-page, etc.)
 - `/serve` : lancer le serveur Hugo en local (previsualisation sur `http://localhost:1313/`)
@@ -57,7 +41,7 @@ Ce repo ne contient pas de site. Il contient les **instructions et templates** p
 ```
 .claude/
 ├── scripts/
-│   └── fetch-image.sh           ← Recuperation auto d'image libre de droit (Openverse API)
+│   └── fetch-image.sh           ← Recuperation auto d'image libre de droit (Pexels, Unsplash, Commons, Openverse)
 ├── skills/
 │   ├── create-site.md           ← Workflow creation de site complet
 │   ├── create-article-geo.md        ← Workflow creation d'article (multi-types)
@@ -71,8 +55,8 @@ Ce repo ne contient pas de site. Il contient les **instructions et templates** p
 │   └── github-deploy.md         ← Push et deployer sur GitHub Pages
 └── templates/
     ├── data/
-    │   ├── authors.yaml          ← les 3 personas du parc, bios FR/EN, expertise, topics
-    │   └── avatar-prompts.md     ← Prompts de generation des 6 avatars (Midjourney/DALL-E)
+    │   ├── authors.yaml          ← l'auteur du blog, bio FR/EN, expertise, topics
+    │   └── avatar-prompts.md     ← Prompt de generation de l'avatar (Midjourney/DALL-E)
     ├── hugo-workflow.yml         ← GitHub Actions CI/CD
     ├── roadmap-template.yaml     ← Squelette commente de la roadmap editoriale evergreen (pour /create-article-auto)
     ├── main.css                  ← Design system CSS complet (variables, composants, responsive, a11y)
@@ -110,7 +94,7 @@ Ce repo ne contient pas de site. Il contient les **instructions et templates** p
 - **Nom du site** : Brunch Story
 - **Description (FR)** : Le brunch et le petit dejeuner passes au crible : ce qui vaut le prix au restaurant, ce qui se refait mieux chez soi, et le cafe qui va avec.
 - **Description (EN)** : Brunch and breakfast, examined: what is worth paying for at a restaurant, what is better made at home, and the coffee that goes with it.
-- **URL** : https://www.brunch-story.fr/ (GitHub Pages, repo `DamienBo59/pbn-geo-brunch-story`)
+- **URL** : https://www.brunch-story.fr/ (GitHub Pages)
 - **Couleurs** : primary `#B25A28` (terracotta), primary-light `#D98A52`, primary-dark `#8A4319`, background `#FDFAF5`, background-alt `#F5EDE1`, accent `#5F7A52` (olive), text `#2B2621`, border `#E6DACA`
 - **Polices** : titres Fraunces, corps Source Serif 4, UI Inter
 - **Langue principale** : francais (fr) (la version EN en sous-dossier `/en/` est TOUJOURS active)
@@ -120,14 +104,14 @@ Ce repo ne contient pas de site. Il contient les **instructions et templates** p
   - Petit dejeuner sain / Healthy breakfast
   - Pancakes et sucre / Pancakes and sweet
   - Oeufs et sale / Eggs and savoury
-- **Auteur principal du site** : `bastien-delorme` (persona **P03** du parc). **C'est le SEUL auteur de ce blog.** Ne jamais faire signer un article par `helene-vasseur` ou `marion-kieffer` : ils signent les deux autres blogs du parc, et un auteur commun relierait les sites entre eux. Sa fiche prime sur `data/authors.yaml` et doit etre lue avant d'ecrire : Drive perso, `100 Areas/seo_freelance/Reddit/parc-reddit/personas/brunch-petit-dejeuner/persona-P03-brunch-lyonnais.md`.
+- **Auteur principal du site** : `bastien-delorme` (Bastien Delorme). **C'est le SEUL auteur de ce blog.** Ne jamais faire signer un article par quelqu'un d'autre ni ajouter un second auteur dans `data/authors.yaml`.
 
 ## Regles propres a ce blog
 
 - **Angle editorial** : le client qui compte. Ce qui justifie le prix d'un brunch, ce qui se refait mieux a la maison, et pourquoi le cafe est presque toujours le point faible. Jamais la posture du critique gastronomique ni celle du professionnel de la restauration.
-- **Ouverture par les boissons.** Le cluster `Boissons du matin` est le seul territoire vide de la niche (4 mots-cles mesures, 1 % du volume) et c'est le centre d'interet du persona. C'est par la qu'on ouvre, pas par les gros volumes de pancakes.
-- **Interdits de sujet** : le the et les infusions (univers de P01), les recettes de patisserie et de gouter (univers de P02). Une viennoiserie dans un brunch est acceptable, une recette de gateau ne l'est pas.
-- **Aucun lien sortant vers un site cible.** Ce blog vit en autonomie. Le branchement viendra plus tard, sur decision explicite de Damien. Il ne se lie pas non plus a `mamie-the.fr` ni a `gouter-gourmand.fr`.
+- **Ouverture par les boissons.** Le cluster `Boissons du matin` est le seul territoire vide de la niche (4 mots-cles mesures, 1 % du volume) et c'est le centre d'interet de l'auteur. C'est par la qu'on ouvre, pas par les gros volumes de pancakes.
+- **Perimetre** : le brunch, le petit dejeuner et les boissons du matin. Une viennoiserie dans un brunch est acceptable, une recette de gateau ne l'est pas.
+- **Aucun lien sortant editorial sans decision explicite.** Ce blog vit en autonomie.
 - **Accents obligatoires** dans tout le contenu et dans l'interface FR (i18n/fr.toml). Le template historique les omettait, ce blog ne le fait pas.
 - **Categories accentuees** : le dossier d'une page de categorie doit porter le terme **accentue** (`content/fr/categories/petit-dejeuner-sain` avec l'accent), sinon Hugo ne rattache pas la page au terme et perd son titre et sa description. L'URL, elle, reste sans accents grace a `removePathAccents = true`.
 
@@ -135,7 +119,7 @@ Ce repo ne contient pas de site. Il contient les **instructions et templates** p
 
 Le fichier `MEMORY.md` a la racine trace tous les articles publies, classes par semaine. Il est mis a jour automatiquement par `/create-article-geo` et `/create-article-seo`.
 
-**Repere indicatif : 4 articles par semaine.** C'est un rythme cible pour eviter la publication en masse. **Ce n'est pas un blocage.**
+**Repere indicatif : 4 articles par semaine.** C'est un rythme vise pour eviter la publication en masse. **Ce n'est pas un blocage.**
 
 Comportement par skill :
 - `/create-article-geo` (creation manuelle interactive) : si 4 articles ou plus deja publies cette semaine, **simple warning** affiche a l'utilisateur. L'utilisateur peut continuer en validant. Ne JAMAIS bloquer.
@@ -165,9 +149,9 @@ Ce garde-fou est purement informatif. L'utilisateur peut toujours forcer l'ajout
 - Ne JAMAIS utiliser `&` dans les noms de categories ou de tags — toujours remplacer par "et" (Hugo genere un double tiret `--` dans le slug, ce qui casse les URLs)
 - Le ton des articles est impersonnel (pas de je/tu/nous/vous) sauf instruction contraire
 - Les specs d'article (mots minimum, H2, blocs obligatoires) dependent du type choisi — lire les `<!-- NOTES POUR CLAUDE -->` dans chaque template d'article
-- Chaque article doit contenir au minimum 3 liens internes contextuels vers d'autres articles du blog. L'ancre de chaque lien doit contenir le mot-cle principal de l'article cible. **Maillage intra-langue uniquement** : un article FR ne mail que des articles FR, un article EN ne mail que des articles EN (le lien vers la traduction est gere par le language switcher du header)
-- **Systeme d'auteurs, propre au parc perso** : **3 auteurs seulement**, definis dans `.claude/templates/data/authors.yaml`, et ce ne sont pas des signatures interchangeables. **Chacun est un persona du parc** : il signe UN SEUL blog et porte AUSSI un compte Reddit dans le meme univers (decision de Damien du 2026-08-19). `helene-vasseur` pour le the (`mamie-the.fr`), `marion-kieffer` pour la patisserie et le gouter (`gouter-gourmand.fr`), `bastien-delorme` pour le brunch et le petit dejeuner (`brunch-story.fr`). Chaque auteur a un id-slug, un nom **public et definitif**, un `jobTitle`/`role`/`bio` bilingues FR/EN, une liste d'`expertise` et une liste de `topics`. **Un blog ne copie que l'auteur de sa thematique**, jamais les trois : un auteur qui signe sur deux blogs relie les deux sites, et un blog a deux voix est un signal. **La source de verite est la fiche persona, pas le YAML** : la lire avant d'ecrire un article, elle porte la voix et les faits engages a ne jamais contredire. Fiches dans le Drive perso, `100 Areas/seo_freelance/Reddit/parc-reddit/personas/`
-- **Selection automatique de l'auteur** : dans le frontmatter d'un article, le champ `author` contient l'**ID slug** de l'auteur (ex: `author: helene-vasseur`), pas son nom complet. La skill `/create-article-geo` selectionne automatiquement l'auteur le plus pertinent selon les `topics` et `expertise` qui matchent avec le sujet de l'article. Si aucun match clair, l'auteur principal du site (defini dans la section "Contexte du site" de ce CLAUDE.md) est utilise
+- Chaque article doit contenir au minimum 3 liens internes contextuels vers d'autres articles du blog. L'ancre de chaque lien doit contenir le mot-cle principal de l'article vise. **Maillage intra-langue uniquement** : un article FR ne mail que des articles FR, un article EN ne mail que des articles EN (le lien vers la traduction est gere par le language switcher du header)
+- **Systeme d'auteurs** : **un seul auteur par blog**, defini dans `data/authors.yaml` (modele dans `.claude/templates/data/authors.yaml`). Il a un id-slug, un nom **public et definitif**, un `jobTitle`/`role`/`bio` bilingues FR/EN, une liste d'`expertise` et une liste de `topics`. Un blog a deux voix n'est pas credible : ne jamais ajouter de seconde signature. La voix de l'auteur et les faits qu'il a deja affirmes dans ses articles ne doivent jamais etre contredits
+- **Selection automatique de l'auteur** : dans le frontmatter d'un article, le champ `author` contient l'**ID slug** de l'auteur (ex: `author: bastien-delorme`), pas son nom complet. La skill `/create-article-geo` selectionne automatiquement l'auteur le plus pertinent selon les `topics` et `expertise` qui matchent avec le sujet de l'article. Si aucun match clair, l'auteur principal du site (defini dans la section "Contexte du site" de ce CLAUDE.md) est utilise
 - **Avatars des auteurs** : fichiers WebP 512x512 dans `static/images/authors/[id].webp`. Style unifie "flat illustration portrait". Prompts de generation documentes dans `.claude/templates/data/avatar-prompts.md`. Si l'avatar est manquant, un placeholder coloree avec la 1ere lettre du nom s'affiche
 - **JSON-LD Author** : le partial `seo-head.html` genere automatiquement un schema.org/Person (ou Organization) complet depuis les donnees de `data/authors.yaml` (name, jobTitle, description, knowsAbout, image, sameAs, worksFor)
 - **Bloc auteur en bas d'article** : le layout `single.html` affiche automatiquement un encart avec avatar, nom, role, bio complete et expertise de l'auteur, traduit dans la langue de l'article (FR ou EN)
@@ -192,7 +176,7 @@ Ce garde-fou est purement informatif. L'utilisateur peut toujours forcer l'ajout
 
 ## Publications evergreen automatiques
 
-En plus des articles GEO (geo-comparatif, rediges a la main via `/create-article-geo`), chaque blog peut publier automatiquement des articles evergreen SEO. Deux methodes coexistent dans le reseau, le choix se fait par blog en fonction du contexte (modele, frequence, fetch concurrents, maillage).
+En plus des articles GEO (geo-comparatif, rediges a la main via `/create-article-geo`), chaque blog peut publier automatiquement des articles evergreen SEO. Deux methodes coexistent, le choix se fait en fonction du contexte (modele, frequence, fetch concurrents, maillage).
 
 ### Methode 1 : CCR cloud auto (`/create-article-auto`)
 
@@ -203,12 +187,12 @@ En plus des articles GEO (geo-comparatif, rediges a la main via `/create-article
 - **Maillage cross-batch** : non (1 article a la fois)
 - **Publication** : push immediat -> en ligne tout de suite
 - **Cas d'usage** : tient la cadence sans intervention humaine, ideal pour les blogs avec roadmap stable
-- **Exemple en prod dans le parc perso** : aucun pour l'instant. Aucune routine `/schedule` n'est encore montee en perso.
+- **En prod sur ce blog** : aucune routine `/schedule` n'est montee pour l'instant.
 
 ### Methode 2 : batch local + GitHub Actions cron (`/create-article-seo`)
 
 - **Skill** : `/create-article-seo` polyvalente
-- **Execution** : Mac de Damien (local), Opus 4.7 sans contrainte
+- **Execution** : en local, Opus 4.7 sans contrainte
 - **Modele** : Opus 4.7 (qualite max, pas de bug timeout)
 - **Fetch concurrents** : marche normalement, analyse SERP avec lecture des 3-5 pages concurrentes
 - **Maillage cross-batch** : oui (les articles produits dans une meme batch se citent entre eux)
@@ -222,12 +206,11 @@ En plus des articles GEO (geo-comparatif, rediges a la main via `/create-article
   - Prochain slot dispo dans la cadence (mardi/vendredi non occupe)
 - **Publication** : article ecrit avec `publishDate` futur. Hugo (`buildFuture: false`) le masque jusqu'a la date. GitHub Actions cron mardi/vendredi 3h Paris rebuild le site, l'article apparait automatiquement quand sa date est arrivee.
 - **Cas d'usage** : production en lot mensuelle, qualite max, maillage interne propre
-- **Exemple en prod dans le parc perso** : aucun pour l'instant.
 
 ### Principe commun aux 2 methodes
 
-- **SEO pur**, pas GEO : pas de "prompt GEO", pas de "En bref numerote". Juste un mot-cle SEO cible, analyse SERP, structure Hn basee sur les concurrents, redaction optimisee.
-- **Bilingue FR + EN** comme tous les articles du reseau (trad directe de la version FR).
+- **SEO pur**, pas GEO : pas de "prompt GEO", pas de "En bref numerote". Juste un mot-cle SEO vise, analyse SERP, structure Hn basee sur les concurrents, redaction optimisee.
+- **Bilingue FR + EN** comme tous les articles du blog (trad directe de la version FR).
 - **Human in the loop** uniquement sur la roadmap : c'est l'humain qui decide des mots-cles a cibler et de leur date de publication.
 
 ### Roadmap editoriale

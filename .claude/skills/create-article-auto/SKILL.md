@@ -7,13 +7,13 @@ Elle est destinee a etre declenchee par une routine planifiee (ex: 2x/semaine a 
 ## Quand l'utiliser
 
 - Declenchement automatique via routine planifiee (cron distant).
-- Declenchement manuel : `/create-article-auto` dans le contexte d'un blog du parc PBN GEO perso.
+- Declenchement manuel : `/create-article-auto` dans le dossier du blog.
 
 ## Pre-requis dans le blog
 
 - `roadmap.yaml` existe et contient au moins une entree `status: todo`.
 - `hugo.toml` configure avec la langue principale + la langue EN.
-- `data/authors.yaml` present (systeme d'auteurs partage).
+- `data/authors.yaml` present (auteur unique du blog).
 - `content/blog/` existe (peut etre vide pour un premier article).
 - Remote git `origin` configure, acces push.
 - Outil `WebSearch` disponible (recommande, execute cote serveur donc non soumis aux restrictions reseau du sandbox). S'il est absent, la skill degrade en mode "kw seul" sans echouer.
@@ -89,7 +89,7 @@ L'agent determine a partir des resultats WebSearch (ou du `kw` seul en mode degr
 - **Angles concurrents** : sous-themes qui reviennent dans les titres et snippets (ex: prix, comparatif, avis, guide, duree de vie...)
 - **Champ semantique** : mots recurrents dans les titres et snippets
 - **FAQ pertinente ?** : vrai si les resultats font ressortir des questions recurrentes (formulations interrogatives dans les titres/snippets, "comment", "pourquoi", "quel", "combien"...). En mode degrade : juger selon la nature du sujet.
-- **Longueur cible** : 1500-2000 mots par defaut (cible raisonnable pour un article evergreen qualitatif)
+- **Longueur visee** : 1500-2000 mots par defaut (objectif raisonnable pour un article evergreen qualitatif)
 - **Tableau pertinent ?** : vrai par defaut pour les requetes a intention comparative (mots "meilleur", "top", "vs", "ou", "comparatif" dans le kw ou les titres), false sinon
 - **Si FAQ pertinente** : construire 4-6 questions a partir des themes/questions vus dans les resultats, retirer les doublons, reformuler (pas de copie mot pour mot)
 
@@ -106,14 +106,13 @@ tout seul : `themes/brunch-story/layouts/_default/baseof.html` rend
 
 **Le budget de 60 caracteres porte sur le title RENDU**, donc frontmatter + suffixe ajoute
 par le theme, et non sur le seul frontmatter. C'est l'erreur trouvee le 2026-09-12 : les
-**20 articles** des deux blogs du parc perso avaient un title de frontmatter sous 60
-caracteres mais un title rendu de **64 a 88 caracteres**, donc tronque en SERP sur la
-totalite du site. Le defaut venait de cette consigne, qui ne comptait pas le suffixe.
+articles avaient un title de frontmatter sous 60 caracteres mais un title rendu de
+**64 a 88 caracteres**, donc tronque en SERP sur la totalite du site. Le defaut venait de
+cette consigne, qui ne comptait pas le suffixe.
 
 | Blog | `Site.Title` | Suffixe ajoute | Max pour le frontmatter |
 |---|---|---|---|
 | brunch-story.fr | Brunch Story | ` \| Brunch Story` (15) | **45** |
-| mamie-the.fr | Mamie-Thé | ` \| Mamie-Thé` (12) | **48** |
 
 - Format du frontmatter : `[Kw] : [angle]`, **sans nom de site, sans separateur final**
 - Contient le `kw` en debut de title
@@ -156,31 +155,28 @@ Injecter l'ID-slug dans le frontmatter (`author: [id]`). Meme ID pour FR et EN.
 
 ## Etape 5 — Image hero auto
 
-> **Cascade des sources d'image (parc perso, 2026-09-12).** Le script
+> **Cascade des sources d'image (2026-09-12).** Le script
 > `.claude/scripts/fetch-image.sh` essaie dans cet ordre : **Pexels**, puis **Unsplash**,
 > puis **Wikimedia Commons**, puis **Openverse**, puis un visuel de charte genere en local
 > par `.claude/scripts/make-placeholder.py`. Il ne rend jamais la main sans visuel.
 >
-> **Openverse n'est plus la source nominale, il est l'avant-dernier recours.** Deux raisons :
-> la mesure du parc pro (sur 45 heros, 10 photos franchement hors sujet, 15 generiques, et
-> des URLs mortes), et le fait qu'**`api.openverse.org` est injoignable depuis le Mac de
-> Damien** (timeout, et 403 sur `openverse.org`, mesure du 2026-09-12). C'est **Wikimedia
-> Commons** qui porte donc reellement la cascade tant qu'aucune cle n'est posee.
+> **Openverse n'est plus la source nominale, il est l'avant-dernier recours.** Ses resultats
+> sont souvent hors sujet ou generiques, et **`api.openverse.org` est souvent injoignable**
+> (timeout, et 403 sur `openverse.org`, mesure du 2026-09-12). C'est **Wikimedia Commons**
+> qui porte la cascade quand aucune cle n'est disponible.
 >
-> Les cles `PEXELS_API_KEY` et `UNSPLASH_ACCESS_KEY` sont lues dans l'environnement ou dans
-> le `.env` du **Drive perso uniquement**, **jamais dans le repo** : les repos du parc sont
-> publics, et le parc perso n'emprunte rien au Drive datashake. **Au 2026-09-12 aucune des
-> deux n'existe cote perso** : la cascade demarre donc a Commons, et l'article sort quand meme.
+> Les cles `PEXELS_API_KEY` et `UNSPLASH_ACCESS_KEY` sont lues dans l'environnement, ou dans
+> le fichier `.env` designe par `IMAGE_KEYS_ENV_FILE`, **jamais dans le repo** : il est
+> public. Sans cle, la cascade demarre a Commons, et l'article sort quand meme.
 >
 > Le script tient un registre `.claude/hero-sources.json` qui **empeche deux articles de
 > porter la meme photo**. Il est versionne, il ne contient que des identifiants publics.
 >
 > ⚠️ **Le controle visuel de l'image est obligatoire avant publication, quelle que soit la
-> banque.** Mesure du 2026-09-12 sur les 10 premiers heros du parc perso : **3 images a
-> rejeter** malgre un titre de fichier correct, dont un plateau de cantine scolaire pour
-> « plateau petit dejeuner », un muesli chocolate en tete d'un article sur l'index
-> glycemique bas (l'image contredisait le texte), et un fichier intitule « Chamomile Flower »
-> qui **montrait une tout autre plante**. Le titre ne garantit rien sur le contenu.
+> banque.** Mesure du 2026-09-12 sur les 10 premiers heros : **3 images a rejeter** malgre
+> un titre de fichier correct, dont un plateau de cantine scolaire pour « plateau petit
+> dejeuner » et un muesli chocolate en tete d'un article sur l'index glycemique bas (l'image
+> contredisait le texte). Le titre ne garantit rien sur le contenu.
 
 
 
@@ -200,7 +196,7 @@ bash .claude/scripts/fetch-image.sh "<kw traduit en anglais>" "<slug-fr>" "stati
 2. Lire le frontmatter de chacun : `title`, `kw` (via slug), `categories`, `tags`.
 3. Scorer chaque article par proximite avec le nouveau (categorie identique = +3, tags partages = +1 par tag, mots communs entre kw = +2).
 4. Garder les 3 a 5 meilleurs scores.
-5. Preparer les ancres : chaque ancre contient le mot-cle principal de l'article cible (extrait du slug, reformule en langue naturelle).
+5. Preparer les ancres : chaque ancre contient le mot-cle principal de l'article vise (extrait du slug, reformule en langue naturelle).
 6. Positionner les liens de maniere contextuelle dans le body (etape 7) : un par section, pas de bloc "Voir aussi" en fin d'article.
 
 **Maillage intra-langue uniquement** : version FR mail vers `/blog/*`, version EN mail vers `/en/blog/*`.
@@ -237,7 +233,7 @@ readingTime: true
 ### Body
 - Premier paragraphe : contient le `kw` naturellement, pose le contexte.
 - Respecter la structure Hn de l'etape 3. Aucune section ajoutee, aucune supprimee.
-- Longueur cible : moyenne des concurrents +/- 10% (ex: si moyenne = 1600 mots, viser 1440-1760).
+- Longueur visee : moyenne des concurrents +/- 10% (ex: si moyenne = 1600 mots, viser 1440-1760).
 - Densite `kw` naturelle : 1-2%.
 - Variations et synonymes du `kw` dans les H2.
 - Mots-cles en **gras** quand pertinent.
@@ -251,20 +247,14 @@ readingTime: true
 
 ## Etape 7bis — Controle de score : pourquoi elle n'existe pas ici
 
-Le parc pro fait suivre la redaction d'un **controle de score Datafer** : l'article est
-soumis a l'API, scoré sur les memes criteres que le top 10, et enrichi en une passe si le
-total tombe sous `competitors.avg`. Cette etape **n'a pas d'equivalent dans le parc perso**,
-et c'est volontaire, pas un oubli.
-
-Raison : elle repose sur `DATAFER_API_KEY` (l'API Corpus, outil interne datashake) et sur
-`CRAZYSERP_API_KEY`. **Aucune des deux n'existe cote perso**, et les emprunter au Drive
-datashake reviendrait a relier techniquement les deux parcs, ce que la doctrine interdit.
+Aucun outil de scoring semantique (score de l'article contre le top 10, termes NLP
+ponderes) n'est branche sur ce blog. C'est volontaire, pas un oubli.
 
 Consequences a connaitre, pour ne pas chercher une etape absente :
 
-- Le mode d'analyse du parc perso est donc **`websearch`** au sens de la cascade pro, soit
-  le cas 3 sur 4. On n'a ni les structures Hn completes du top 10, ni les termes NLP
-  ponderes, ni le `targetWordCount` calcule sur les concurrents, ni le score /100.
+- Le mode d'analyse est donc **`websearch`** : on n'a ni les structures Hn completes du
+  top 10, ni les termes NLP ponderes, ni une longueur visee calculee sur les concurrents,
+  ni un score /100.
 - **Ce qui reste applicable sans API** : relever la SERP par recherche web sur le `kw`,
   s'en servir pour verifier qu'aucun geant ne tient le top 3, en deduire les sujets que
   les concurrents traitent tous, et caler la longueur sur ce qui existe.
@@ -272,9 +262,6 @@ Consequences a connaitre, pour ne pas chercher une etape absente :
   ne demandent aucune cle. Verifier que chaque lien interne pointe vers une page qui
   existe, que le budget de title rendu tient dans 60 caracteres, que la FAQ et le
   BreadcrumbList sortent bien dans le JSON-LD, et que l'image a ete regardee.
-
-Si une cle Datafer perso est posee un jour, reprendre l'etape 7bis de la skill pro telle
-quelle : elle est ecrite pour etre non bloquante et se saute d'elle-meme sans cle.
 
 ## Etape 8 — Redaction EN (traduction directe)
 
@@ -291,7 +278,7 @@ Produire le fichier `content/en/blog/[slug-en].md`.
 
 ### 9.0 Installer Hugo extended (meme version que la prod)
 
-Le sandbox cloud n'a PAS Hugo pre-installe, et `apt` fournit une version trop ancienne (0.123.x) qui fait echouer le build de certains sites du reseau (ex: sites multilingues avec `locale` par langue). Avant de builder, installer la MEME version que le deploiement GitHub Actions du reseau, **Hugo extended v0.161.1** :
+Le sandbox cloud n'a PAS Hugo pre-installe, et `apt` fournit une version trop ancienne (0.123.x) qui fait echouer le build de certains sites (ex: sites multilingues avec `locale` par langue). Avant de builder, installer la MEME version que le deploiement GitHub Actions du reseau, **Hugo extended v0.161.1** :
 
 ```bash
 wget -q -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.161.1/hugo_extended_0.161.1_linux-amd64.deb \
@@ -355,7 +342,7 @@ A **n'importe quelle etape**, si un blocage survient :
 5. Push.
 6. Exit non-zero.
 
-L'entree `failed` n'est **pas retentee automatiquement** par les lancements suivants de la skill (elle reste en status `failed`). Damien passe manuellement la corriger et la repasser en `todo`.
+L'entree `failed` n'est **pas retentee automatiquement** par les lancements suivants de la skill (elle reste en status `failed`). L'humain passe manuellement la corriger et la repasser en `todo`.
 
 ## Format de `roadmap.yaml`
 

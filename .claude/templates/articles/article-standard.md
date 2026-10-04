@@ -6,7 +6,7 @@ lastmod: "[YYYY-MM-DD]"
 description: "[Meta description, max 140 caracteres, contient le mot-cle]"
 categories: ["[Categorie dans la langue de l'article]"]
 tags: ["[tag1]", "[tag2]", "[tag3]", "[tag4]", "[tag5]"]
-author: "[ID-AUTEUR — l'auteur unique de ce blog, ex: helene-vasseur. Slug correspondant a une cle de data/authors.yaml]"
+author: "[ID-AUTEUR — l'auteur unique de ce blog, ex: bastien-delorme. Slug correspondant a une cle de data/authors.yaml]"
 image: "[/images/blog/slug.webp — auto-genere par fetch-image.sh]"
 imageAlt: "[Description de l'image en francais, max 125 caracteres — auto-genere]"
 imageCredit: "[Photo par <auteur> via <source> (<licence>) — auto-genere]"
@@ -122,7 +122,7 @@ NOTES POUR CLAUDE :
 - Objectif : article informatif complet, optimise a la fois pour le referencement organique Google ET pour etre cite par les moteurs generatifs (ChatGPT, Perplexity, Google AI Overviews)
 - Le quick summary (blockquote "En bref") est critique : c'est ce que les LLMs extraient en priorite. **Format OBLIGATOIRE : liste NUMEROTEE** (3-4 points). Chaque point doit resumer une VRAIE information cle de l'article (equivalent d'un H2 entier), pas un point marketing. Donnees chiffrees obligatoires
 - **1ere question FAQ = le prompt GEO / la query fan-out reformule en question naturelle**. La reponse doit etre directe et structuree (3-5 phrases avec donnee chiffree) — c'est cette reponse que les LLMs vont extraire en priorite. Les autres questions peuvent porter sur des variantes du mot-cle ou des sous-questions
-- **Regle liens externes** : 1 SEUL lien externe maximum vers le site de la marque/client cible (si applicable). Les liens externes vers des sources tierces (etudes, organismes, medias, Wikipedia) sont autorises et encourages pour renforcer l'E-E-A-T. Les liens internes au cocon semantique (autres articles du blog, pages categories) ne sont pas limites
+- **Regle liens externes** : 1 SEUL lien externe maximum vers le site de la marque ou du client mis en avant (si applicable). Les liens externes vers des sources tierces (etudes, organismes, medias, Wikipedia) sont autorises et encourages pour renforcer l'E-E-A-T. Les liens internes au cocon semantique (autres articles du blog, pages categories) ne sont pas limites
 - Privilegier les donnees chiffrees, etudes, faits verifiables — ca renforce a la fois l'E-E-A-T (SEO) et la citabilite (GEO)
 - Les tableaux et listes structurees sont extraits en priorite par les IA generatives ET ameliorent la lisibilite pour Google
 - Les citations sourcees renforcent l'autorite
