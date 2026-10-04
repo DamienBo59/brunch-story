@@ -260,6 +260,8 @@ articles:
     published_url_fr: "https://www.brunch-story.fr/blog/petit-dejeuner-sportif/"
     published_url_en: "https://www.brunch-story.fr/en/blog/pre-workout-breakfast/"
     error: null
+  # Sautee le 2026-09-20 et le 2026-10-04, laissee todo : double /blog/recette-brioche-a-l-ancienne/.
+  # En attente d'arbitrage de Damien.
   - kw: "recette brioche tressée"
     category: "Pancakes et sucré"
     volume: 3000
@@ -305,41 +307,43 @@ articles:
     volume: 1300
     kd: null
     scheduled_date: "2026-10-30"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-10-30"
+    published_url_fr: "https://www.brunch-story.fr/blog/calories-cafe-au-lait/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/cafe-au-lait-calories/"
     error: null
   - kw: "pain perdu recette ancienne"
     category: "Pancakes et sucré"
     volume: 2000
     kd: null
     scheduled_date: "2026-11-03"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-11-03"
+    published_url_fr: "https://www.brunch-story.fr/blog/pain-perdu-recette-ancienne/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/traditional-french-toast/"
     error: null
   - kw: "smoothie sans lait"
     category: "Boissons du matin"
     volume: 400
     kd: null
     scheduled_date: "2026-11-06"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-11-06"
+    published_url_fr: "https://www.brunch-story.fr/blog/smoothie-sans-lait/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/dairy-free-smoothie/"
     error: null
   - kw: "tartine salée recette"
     category: "Oeufs et salé"
     volume: 880
     kd: null
     scheduled_date: "2026-11-10"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-11-10"
+    published_url_fr: "https://www.brunch-story.fr/blog/tartine-salee-recette/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/savoury-toast-recipes/"
     error: null
+  # Sautee le 2026-10-04, laissee todo : cannibalise /blog/plateau-petit-dejeuner/, qui porte deja le tag
+  # "petit dejeuner au lit", une FAQ et un H2 dedies. En attente d'arbitrage de Damien.
   - kw: "petit déjeuner au lit"
     category: "Organiser un brunch"
     volume: 1300
@@ -355,10 +359,10 @@ articles:
     volume: 390
     kd: null
     scheduled_date: "2026-11-17"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-11-17"
+    published_url_fr: "https://www.brunch-story.fr/blog/porridge-graines-de-chia/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/chia-seed-porridge/"
     error: null
   - kw: "levain pour brioche"
     category: "Pancakes et sucré"

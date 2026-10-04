@@ -90,3 +90,21 @@ Les 5 versions EN sont publiees sous `/en/blog/` : `berry-smoothie`, `eggless-fr
 Versions EN : `/en/blog/mimosa-cocktail/`, `/en/blog/bagel-origin/`. 3 liens internes par article, tous vers des articles de date anterieure.
 
 **Image du mimosa remplacee au controle visuel** : la premiere photo retenue (Pexels `10594799`) montrait des flutes de rose clair avec des mures, pas un mimosa, qui est opaque et orange ; la seconde (`9228135`) un jus d'orange verse dans un bocal. Retenue : Pexels `1772974`, une vraie flute de mimosa. Les deux rejets sont inscrits au registre `hero-sources.json` sous `_rejet-visuel-mimosa-*`.
+
+**Lot B, produit le 4 octobre** : 5 articles (FR + EN), programmes sur leurs `scheduled_date`. Maillage croise dans le lot, uniquement du plus recent vers le plus ancien.
+
+| Date de publication | Article FR | Categorie | Mot-cle cible | Volume |
+|---|---|---|---|---|
+| 2026-10-30 | [Calories d'un cafe au lait : le vrai calcul](https://www.brunch-story.fr/blog/calories-cafe-au-lait/) | Petit dejeuner sain | `calories d'un cafe au lait` | 1 300 |
+| 2026-11-03 | [Pain perdu recette ancienne : la methode](https://www.brunch-story.fr/blog/pain-perdu-recette-ancienne/) | Pancakes et sucre | `pain perdu recette ancienne` | 2 000 |
+| 2026-11-06 | [Smoothie sans lait : le liquide et le cremeux](https://www.brunch-story.fr/blog/smoothie-sans-lait/) | Boissons du matin | `smoothie sans lait` | 400 |
+| 2026-11-10 | [Tartine salee : 8 recettes et le bon pain](https://www.brunch-story.fr/blog/tartine-salee-recette/) | Oeufs et sale | `tartine salee recette` | 880 |
+| 2026-11-17 | [Porridge aux graines de chia : la recette](https://www.brunch-story.fr/blog/porridge-graines-de-chia/) | Petit dejeuner sain | `porridge aux graines de chia` | 390 |
+
+Versions EN : `/en/blog/cafe-au-lait-calories/`, `/en/blog/traditional-french-toast/`, `/en/blog/dairy-free-smoothie/`, `/en/blog/savoury-toast-recipes/`, `/en/blog/chia-seed-porridge/`. 4 a 5 liens internes par article.
+
+**Garde-fou anti-cannibalisation** : `petit dejeuner au lit` (2026-11-13) sautee et laissee `todo`, elle double `/blog/plateau-petit-dejeuner/` qui porte deja le tag, une FAQ et un H2 « Le plateau au lit ». `recette brioche tressee` toujours en attente. Juges non cannibalisants apres lecture : `pain perdu recette ancienne` contre `pain-perdu-sans-oeuf` (variante a contrainte, autre SERP), `porridge aux graines de chia` contre `bienfaits-graines-de-chia` (recette contre nutrition, l'article bienfaits ne donne qu'un pudding en un paragraphe), `smoothie sans lait` et `tartine salee recette` contre leurs articles generiques voisins. **Risques a venir dans la roadmap, non traites** : `pain perdu avec du pain dur` (2027-01-19) recouvre largement la recette ancienne, qui repose sur le pain rassis ; `porridge recette rapide` (2027-01-08) recoupe le porridge chia ; `levain pour brioche` (2026-11-20) est a relire contre la brioche a l'ancienne.
+
+**Images : 4 rejets sur 9 candidats** (cafe a la creme fouettee, pain perdu de restaurant aux fruits rouges, milkshake rose pour un smoothie sans lait, tartine fromage et confiture). Toutes les photos retenues ont ete choisies sur la liste des candidats Pexels ou Commons, apres controle visuel, et non sur le premier resultat du script.
+
+**Piege** : les recettes EN ne sont pas sous `/en/recettes/` mais sous `/en/recipes/`, via un `url:` force dans leur frontmatter. Un lien ecrit sur le modele FR sort en 404 sans erreur au build.
