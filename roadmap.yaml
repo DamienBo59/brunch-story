@@ -275,20 +275,20 @@ articles:
     volume: 600
     kd: null
     scheduled_date: "2026-10-20"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-10-20"
+    published_url_fr: "https://www.brunch-story.fr/blog/cocktail-mimosa/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/mimosa-cocktail/"
     error: null
   - kw: "origine du bagel"
     category: "Oeufs et salé"
     volume: 880
     kd: null
     scheduled_date: "2026-10-23"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-10-23"
+    published_url_fr: "https://www.brunch-story.fr/blog/origine-du-bagel/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/bagel-origin/"
     error: null
   - kw: "petit déjeuner espagnol"
     category: "Organiser un brunch"

@@ -63,3 +63,30 @@ Les 5 versions EN sont publiees sous `/en/blog/` : `berry-smoothie`, `eggless-fr
 **Piege de fuseau horaire sur `publishDate`** : une date seule (`"2026-09-16"`) est lue par Hugo comme minuit **UTC**. Ecrite depuis Paris entre minuit et 2 h du matin, elle est donc dans le futur et `buildFuture: false` masque l'article, sans aucune erreur au build. Le correctif applique est une date horodatee avec fuseau explicite (`"2026-09-15T23:00:00+02:00"`), `date` et `lastmod` restant au 2026-09-16 puisque c'est `.Date` que le theme affiche.
 
 **A traiter, defaut anterieur au lot** : sur toutes les pages EN, les liens de tags pointent vers `/tags/<slug-en>/` au lieu de `/en/tags/<slug-en>/`, soit **63 liens internes en 404**. Les pages cibles existent bien sous `/en/tags/`. La cause est une URL ecrite en dur dans `themes/brunch-story/layouts/_default/single.html` ligne 92 (`{{ "/tags/" | relURL }}`), qui ignore la langue courante. Le defaut touchait deja les 10 articles EN publies avant ce lot, il n'a pas ete corrige ici pour ne pas melanger un changement de theme a une publication.
+
+## Semaine du 2026-09-20
+
+**5 articles produits (FR + EN), programmes sur les creneaux du cron** (mardi et vendredi, `publishDate` futur, revele par le cron GitHub Actions). Commit `9a42b5f`.
+
+| Date de publication | Article FR | Categorie | Mot-cle cible |
+|---|---|---|---|
+| 2026-10-02 | [Smoothie au concombre : eviter l'eau verte](https://www.brunch-story.fr/blog/smoothie-concombre/) | Boissons du matin | `smoothie au concombre` |
+| 2026-10-06 | [Bagel saumon avocat : l'ordre de montage](https://www.brunch-story.fr/blog/bagel-saumon-avocat/) | Oeufs et sale | `bagel saumon avocat` |
+| 2026-10-09 | [Petit dejeuner japonais : ce qu'il contient](https://www.brunch-story.fr/blog/petit-dejeuner-japonais/) | Organiser un brunch | `petit dejeuner japonais` |
+| 2026-10-13 | [Petit dejeuner sportif : avant ou apres](https://www.brunch-story.fr/blog/petit-dejeuner-sportif/) | Petit dejeuner sain | `petit dejeuner sportif` |
+| 2026-10-27 | [Petit dejeuner espagnol : la realite](https://www.brunch-story.fr/blog/petit-dejeuner-espagnol/) | Organiser un brunch | `petit dejeuner espagnol` |
+
+`recette brioche tressee` (2026-10-16) sautee : elle double `/blog/recette-brioche-a-l-ancienne/`. Laissee `todo`, en attente d'arbitrage de Damien.
+
+## Semaine du 2026-10-04
+
+**Lot A, redige dans la nuit du 3 au 4 octobre et finalise le 4** : 2 articles (FR + EN), programmes sur leurs `scheduled_date`.
+
+| Date de publication | Article FR | Categorie | Mot-cle cible | Volume |
+|---|---|---|---|---|
+| 2026-10-20 | [Cocktail mimosa : champagne et jus](https://www.brunch-story.fr/blog/cocktail-mimosa/) | Boissons du matin | `cocktail mimosa champagne jus d'orange` | 600 |
+| 2026-10-23 | [Origine du bagel : Pologne, pas Vienne](https://www.brunch-story.fr/blog/origine-du-bagel/) | Oeufs et sale | `origine du bagel` | 880 |
+
+Versions EN : `/en/blog/mimosa-cocktail/`, `/en/blog/bagel-origin/`. 3 liens internes par article, tous vers des articles de date anterieure.
+
+**Image du mimosa remplacee au controle visuel** : la premiere photo retenue (Pexels `10594799`) montrait des flutes de rose clair avec des mures, pas un mimosa, qui est opaque et orange ; la seconde (`9228135`) un jus d'orange verse dans un bocal. Retenue : Pexels `1772974`, une vraie flute de mimosa. Les deux rejets sont inscrits au registre `hero-sources.json` sous `_rejet-visuel-mimosa-*`.
