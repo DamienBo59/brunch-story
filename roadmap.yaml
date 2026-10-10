@@ -369,30 +369,30 @@ articles:
     volume: 1900
     kd: null
     scheduled_date: "2026-11-20"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-11-20"
+    published_url_fr: "https://www.brunch-story.fr/blog/levain-pour-brioche/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/sourdough-starter-for-brioche/"
     error: null
   - kw: "jus d'orange le matin"
     category: "Boissons du matin"
     volume: 390
     kd: null
     scheduled_date: "2026-11-24"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-11-24"
+    published_url_fr: "https://www.brunch-story.fr/blog/jus-d-orange-le-matin/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/orange-juice-in-the-morning/"
     error: null
   - kw: "gaufres jambon fromage"
     category: "Oeufs et salé"
     volume: 800
     kd: null
     scheduled_date: "2026-11-27"
-    status: todo
-    published_date: null
-    published_url_fr: null
-    published_url_en: null
+    status: done
+    published_date: "2026-11-27"
+    published_url_fr: "https://www.brunch-story.fr/blog/gaufres-jambon-fromage/"
+    published_url_en: "https://www.brunch-story.fr/en/blog/ham-and-cheese-waffles/"
     error: null
   - kw: "petit déjeuner italien"
     category: "Organiser un brunch"

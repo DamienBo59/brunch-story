@@ -108,3 +108,19 @@ Versions EN : `/en/blog/cafe-au-lait-calories/`, `/en/blog/traditional-french-to
 **Images : 4 rejets sur 9 candidats** (cafe a la creme fouettee, pain perdu de restaurant aux fruits rouges, milkshake rose pour un smoothie sans lait, tartine fromage et confiture). Toutes les photos retenues ont ete choisies sur la liste des candidats Pexels ou Commons, apres controle visuel, et non sur le premier resultat du script.
 
 **Piege** : les recettes EN ne sont pas sous `/en/recettes/` mais sous `/en/recipes/`, via un `url:` force dans leur frontmatter. Un lien ecrit sur le modele FR sort en 404 sans erreur au build.
+
+## Semaine du 2026-10-10
+
+**3 articles produits (FR + EN), programmes sur les creneaux du cron**, a la suite du dernier article programme (17 novembre). Maillage uniquement vers des articles de date anterieure.
+
+| Date de publication | Article FR | Categorie | Mot-cle vise | Volume |
+|---|---|---|---|---|
+| 2026-11-20 | [Levain pour brioche : rafraichi et dosage](https://www.brunch-story.fr/blog/levain-pour-brioche/) | Pancakes et sucre | `levain pour brioche` | 1 900 |
+| 2026-11-24 | [Jus d'orange le matin : bonne idee ou pas ?](https://www.brunch-story.fr/blog/jus-d-orange-le-matin/) | Boissons du matin | `jus d'orange le matin` | 390 |
+| 2026-11-27 | [Gaufres jambon fromage : la recette salee](https://www.brunch-story.fr/blog/gaufres-jambon-fromage/) | Oeufs et sale | `gaufres jambon fromage` | 800 |
+
+Versions EN : `/en/blog/sourdough-starter-for-brioche/`, `/en/blog/orange-juice-in-the-morning/`, `/en/blog/ham-and-cheese-waffles/`. 4 liens internes par article.
+
+**Cannibalisation** : `levain pour brioche`, signale comme risque contre `recette-brioche-a-l-ancienne`, juge non cannibalisant apres lecture : l'article existant ne mentionne jamais le levain. L'article traite le levain lui-meme (rafraichis, dosage, conversion d'une recette a la levure, calendrier) et renvoie a la brioche a l'ancienne pour le petrissage. `recette brioche tressee` et `petit dejeuner au lit` toujours sautees, en attente d'arbitrage.
+
+**Images** : choisies sur la liste des candidats apres controle visuel, aucune prise sur le premier resultat du script. Pexels n'a aucune photo de levain en bocal (que des pains de campagne) : image prise sur Wikimedia Commons (CC BY 2.0, credit affiche).

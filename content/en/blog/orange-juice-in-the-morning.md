@@ -5,7 +5,7 @@ translationKey: "jus-d-orange-le-matin"
 date: "2026-11-24"
 lastmod: "2026-11-24"
 publishDate: "2026-11-23T23:00:00+01:00"
-description: "Orange juice in the morning: what a glass contains, how it differs from a whole orange, the effect on an empty stomach, official guidance and how to drink it better."
+description: "Orange juice in the morning: what a glass contains, juice versus whole orange, the empty-stomach effect, official guidance and how to drink it better."
 categories: ["Morning drinks"]
 tags: ["orange juice in the morning", "orange juice", "freshly squeezed juice", "sugars", "breakfast"]
 author: "bastien-delorme"
