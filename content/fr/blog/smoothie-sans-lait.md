@@ -2,9 +2,9 @@
 title: "Smoothie sans lait : le liquide et le crémeux"
 h1: "Comment faire un smoothie sans lait qui reste épais et crémeux ?"
 translationKey: "smoothie-sans-lait"
-date: "2026-11-06"
-lastmod: "2026-11-06"
-publishDate: "2026-11-05T23:00:00+01:00"
+date: "2026-10-10T08:00:00+02:00"
+lastmod: "2026-10-10T08:00:00+02:00"
+publishDate: "2026-10-10T08:00:00+02:00"
 description: "Smoothie sans lait : par quoi remplacer le lait, ce qui donne le crémeux sans produit laitier, les proportions et quatre recettes qui tiennent."
 categories: ["Boissons du matin"]
 tags: ["smoothie sans lait", "smoothie sans lactose", "smoothie vegan", "smoothie maison", "boisson du matin"]

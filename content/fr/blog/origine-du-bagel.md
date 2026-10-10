@@ -2,9 +2,9 @@
 title: "Origine du bagel : Pologne, pas Vienne"
 h1: "D'où vient vraiment le bagel, et pourquoi la légende viennoise ne tient pas ?"
 translationKey: "bagel-origin"
-date: "2026-10-23"
-publishDate: "2026-10-22T23:00:00+02:00"
-lastmod: "2026-10-23"
+date: "2026-10-10T07:20:00+02:00"
+publishDate: "2026-10-10T07:20:00+02:00"
+lastmod: "2026-10-10T07:20:00+02:00"
 description: "Origine du bagel : première trace écrite à Cracovie en 1610, bien avant la légende viennoise de 1683. L'histoire réelle et le rôle du pochage."
 categories: ["Oeufs et salé"]
 tags: ["origine du bagel", "histoire du bagel", "bagel new-yorkais", "bagel de Montréal", "pochage"]

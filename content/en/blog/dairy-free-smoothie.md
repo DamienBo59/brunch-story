@@ -2,9 +2,9 @@
 title: "Dairy-free smoothie: liquid and creaminess"
 h1: "How do you make a smoothie without milk that stays thick and creamy?"
 translationKey: "smoothie-sans-lait"
-date: "2026-11-06"
-lastmod: "2026-11-06"
-publishDate: "2026-11-05T23:00:00+01:00"
+date: "2026-10-10T08:00:00+02:00"
+lastmod: "2026-10-10T08:00:00+02:00"
+publishDate: "2026-10-10T08:00:00+02:00"
 description: "Dairy-free smoothie: what to use instead of milk, what gives creaminess without dairy, the ratios and four recipes that hold together."
 categories: ["Morning drinks"]
 tags: ["dairy-free smoothie", "smoothie without milk", "vegan smoothie", "homemade smoothie", "morning drink"]

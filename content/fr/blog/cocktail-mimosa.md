@@ -2,9 +2,9 @@
 title: "Cocktail mimosa : champagne et jus"
 h1: "Quelles proportions de champagne et de jus d'orange pour un cocktail mimosa ?"
 translationKey: "mimosa-cocktail"
-date: "2026-10-20"
-publishDate: "2026-10-19T23:00:00+02:00"
-lastmod: "2026-10-20"
+date: "2026-10-10T07:10:00+02:00"
+publishDate: "2026-10-10T07:10:00+02:00"
+lastmod: "2026-10-10T07:10:00+02:00"
 description: "Cocktail mimosa : les proportions exactes, l'ordre de versement qui évite la mousse, le pétillant à choisir et le vrai coût d'une flûte au brunch."
 categories: ["Boissons du matin"]
 tags: ["cocktail mimosa", "mimosa champagne jus d'orange", "boisson brunch", "buck's fizz", "crémant brunch"]

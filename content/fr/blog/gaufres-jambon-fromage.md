@@ -2,9 +2,9 @@
 title: "Gaufres jambon fromage : la recette salée"
 h1: "Comment faire des gaufres jambon fromage croustillantes qui n'attachent pas ?"
 translationKey: "gaufres-jambon-fromage"
-date: "2026-11-27"
-lastmod: "2026-11-27"
-publishDate: "2026-11-26T23:00:00+01:00"
+date: "2026-10-10T08:50:00+02:00"
+lastmod: "2026-10-10T08:50:00+02:00"
+publishDate: "2026-10-10T08:50:00+02:00"
 description: "Gaufres jambon fromage : la pâte salée sans sucre, le choix du fromage et du jambon, les trois façons de les garnir et le service au brunch."
 categories: ["Oeufs et salé"]
 tags: ["gaufres jambon fromage", "gaufre salée", "brunch salé", "recette gaufre", "croque gaufre"]

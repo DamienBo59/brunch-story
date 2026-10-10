@@ -2,9 +2,9 @@
 title: "Spanish breakfast: what it really is"
 h1: "What do people actually eat for breakfast in Spain?"
 translationKey: "petit-dejeuner-espagnol"
-date: "2026-10-27"
-lastmod: "2026-10-27"
-publishDate: "2026-10-26T23:00:00+01:00"
+date: "2026-10-10T07:30:00+02:00"
+lastmod: "2026-10-10T07:30:00+02:00"
+publishDate: "2026-10-10T07:30:00+02:00"
 description: "Spanish breakfast is light, quick and taken at the bar. Tostada con tomate, the real place of churros, the two breakfasts of the morning, and the coffee vocabulary."
 categories: ["Hosting a brunch"]
 tags: ["spanish breakfast", "tostada con tomate", "cafe con leche", "churros", "brunch"]

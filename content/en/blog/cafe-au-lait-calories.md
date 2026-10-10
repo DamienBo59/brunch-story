@@ -2,9 +2,9 @@
 title: "Café au lait calories: the real count"
 h1: "How many calories are in a café au lait, depending on the milk and the size?"
 translationKey: "calories-cafe-au-lait"
-date: "2026-10-30"
-lastmod: "2026-10-30"
-publishDate: "2026-10-29T23:00:00+01:00"
+date: "2026-10-10T07:40:00+02:00"
+lastmod: "2026-10-10T07:40:00+02:00"
+publishDate: "2026-10-10T07:40:00+02:00"
 description: "Café au lait calories: from 50 kcal a cup to nearly 200 for a large latte. Milk, size and sugar decide everything, the coffee almost nothing."
 categories: ["Healthy breakfast"]
 tags: ["cafe au lait calories", "cafe au lait", "latte", "semi-skimmed milk", "plant-based milk"]

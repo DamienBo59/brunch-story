@@ -2,9 +2,9 @@
 title: "Tartine salée : 8 recettes et le bon pain"
 h1: "Quelles tartines salées faire au petit déjeuner ou au brunch, et avec quel pain ?"
 translationKey: "tartine-salee-recette"
-date: "2026-11-10"
-lastmod: "2026-11-10"
-publishDate: "2026-11-09T23:00:00+01:00"
+date: "2026-10-10T08:10:00+02:00"
+lastmod: "2026-10-10T08:10:00+02:00"
+publishDate: "2026-10-10T08:10:00+02:00"
 description: "Tartine salée, recette par recette : le pain à choisir, la règle des trois couches qui l'empêche de ramollir, et huit tartines avec leurs quantités."
 categories: ["Oeufs et salé"]
 tags: ["tartine salée recette", "tartine salée", "toast salé", "brunch salé", "pain grillé"]

@@ -2,9 +2,9 @@
 title: "Breakfast and training: before or after"
 h1: "What should you eat for breakfast before or after a training session?"
 translationKey: "petit-dejeuner-sportif"
-date: "2026-10-13"
-lastmod: "2026-10-13"
-publishDate: "2026-10-12T23:00:00+02:00"
+date: "2026-10-10T07:00:00+02:00"
+lastmod: "2026-10-10T07:00:00+02:00"
+publishDate: "2026-10-10T07:00:00+02:00"
 description: "Breakfast before a session and breakfast after it are two different meals. The timing, the carbohydrate and protein amounts, and the fibre mistake before a run."
 categories: ["Healthy breakfast"]
 tags: ["pre workout breakfast", "before training", "recovery", "protein", "healthy breakfast"]

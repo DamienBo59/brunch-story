@@ -2,9 +2,9 @@
 title: "Pain perdu recette ancienne : la méthode"
 h1: "Comment faire le pain perdu à l'ancienne, avec du pain rassis, des œufs et du lait ?"
 translationKey: "pain-perdu-recette-ancienne"
-date: "2026-11-03"
-lastmod: "2026-11-03"
-publishDate: "2026-11-02T23:00:00+01:00"
+date: "2026-10-10T07:50:00+02:00"
+lastmod: "2026-10-10T07:50:00+02:00"
+publishDate: "2026-10-10T07:50:00+02:00"
 description: "Pain perdu, recette ancienne : pain rassis, lait entier, œufs, sucre et beurre. Les proportions, le temps de trempage selon le pain et la cuisson qui dore."
 categories: ["Pancakes et sucré"]
 tags: ["pain perdu recette ancienne", "pain perdu", "pain perdu à l'ancienne", "anti-gaspillage", "brunch sucré"]

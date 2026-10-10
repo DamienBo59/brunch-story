@@ -2,9 +2,9 @@
 title: "Calories d'un café au lait : le vrai calcul"
 h1: "Combien de calories dans un café au lait, selon le lait et la taille ?"
 translationKey: "calories-cafe-au-lait"
-date: "2026-10-30"
-lastmod: "2026-10-30"
-publishDate: "2026-10-29T23:00:00+01:00"
+date: "2026-10-10T07:40:00+02:00"
+lastmod: "2026-10-10T07:40:00+02:00"
+publishDate: "2026-10-10T07:40:00+02:00"
 description: "Calories d'un café au lait : de 50 kcal la tasse à près de 200 pour un grand latte. Le lait, la taille et le sucre font tout, le café presque rien."
 categories: ["Petit déjeuner sain"]
 tags: ["calories café au lait", "café au lait", "latte", "lait demi-écrémé", "boisson végétale"]

@@ -2,9 +2,9 @@
 title: "Mimosa cocktail: champagne and juice"
 h1: "How much champagne and orange juice goes into a mimosa cocktail?"
 translationKey: "mimosa-cocktail"
-date: "2026-10-20"
-publishDate: "2026-10-19T23:00:00+02:00"
-lastmod: "2026-10-20"
+date: "2026-10-10T07:10:00+02:00"
+publishDate: "2026-10-10T07:10:00+02:00"
+lastmod: "2026-10-10T07:10:00+02:00"
 description: "The exact proportions of a mimosa cocktail, the pouring order that stops the foam, which sparkling wine to use, and what a brunch flute really costs."
 categories: ["Morning drinks"]
 tags: ["mimosa cocktail", "mimosa champagne orange juice", "brunch drink", "buck's fizz", "sparkling wine brunch"]

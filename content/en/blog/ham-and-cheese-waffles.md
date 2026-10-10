@@ -2,9 +2,9 @@
 title: "Ham and cheese waffles: the savoury recipe"
 h1: "How do you make crisp ham and cheese waffles that do not stick?"
 translationKey: "gaufres-jambon-fromage"
-date: "2026-11-27"
-lastmod: "2026-11-27"
-publishDate: "2026-11-26T23:00:00+01:00"
+date: "2026-10-10T08:50:00+02:00"
+lastmod: "2026-10-10T08:50:00+02:00"
+publishDate: "2026-10-10T08:50:00+02:00"
 description: "Ham and cheese waffles: the sugar-free savoury batter, choosing the cheese and the ham, three ways to fill them and serving them at brunch."
 categories: ["Eggs and savoury"]
 tags: ["ham and cheese waffles", "savoury waffle", "savoury brunch", "waffle recipe", "croque waffle"]

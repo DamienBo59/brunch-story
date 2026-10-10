@@ -2,9 +2,9 @@
 title: "Savoury toast: 8 recipes and the right bread"
 h1: "Which savoury toasts to make for breakfast or brunch, and with which bread?"
 translationKey: "tartine-salee-recette"
-date: "2026-11-10"
-lastmod: "2026-11-10"
-publishDate: "2026-11-09T23:00:00+01:00"
+date: "2026-10-10T08:10:00+02:00"
+lastmod: "2026-10-10T08:10:00+02:00"
+publishDate: "2026-10-10T08:10:00+02:00"
 description: "Savoury toast, recipe by recipe: which bread to choose, the three-layer rule that stops it going soggy, and eight toasts with their quantities."
 categories: ["Eggs and savoury"]
 tags: ["savoury toast recipes", "savoury toast", "open toast", "savoury brunch", "toasted bread"]

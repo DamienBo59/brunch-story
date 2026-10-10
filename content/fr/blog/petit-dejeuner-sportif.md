@@ -2,9 +2,9 @@
 title: "Petit déjeuner sportif : avant ou après"
 h1: "Que manger au petit déjeuner avant ou après une séance de sport ?"
 translationKey: "petit-dejeuner-sportif"
-date: "2026-10-13"
-lastmod: "2026-10-13"
-publishDate: "2026-10-12T23:00:00+02:00"
+date: "2026-10-10T07:00:00+02:00"
+lastmod: "2026-10-10T07:00:00+02:00"
+publishDate: "2026-10-10T07:00:00+02:00"
 description: "Le petit déjeuner d'avant l'effort et celui d'après n'ont rien à voir. Les délais, les quantités de glucides et de protéines, et l'erreur des fibres avant de courir."
 categories: ["Petit déjeuner sain"]
 tags: ["petit déjeuner sportif", "avant le sport", "récupération", "protéines", "petit déjeuner sain"]

@@ -2,9 +2,9 @@
 title: "Petit déjeuner espagnol : la réalité"
 h1: "Que mange-t-on vraiment au petit déjeuner en Espagne ?"
 translationKey: "petit-dejeuner-espagnol"
-date: "2026-10-27"
-lastmod: "2026-10-27"
-publishDate: "2026-10-26T23:00:00+01:00"
+date: "2026-10-10T07:30:00+02:00"
+lastmod: "2026-10-10T07:30:00+02:00"
+publishDate: "2026-10-10T07:30:00+02:00"
 description: "Le petit déjeuner espagnol est léger, rapide et pris au bar. La tostada con tomate, le vrai rôle des churros, les deux petits déjeuners de la matinée et le vocabulaire du café."
 categories: ["Organiser un brunch"]
 tags: ["petit déjeuner espagnol", "tostada con tomate", "café con leche", "churros", "brunch"]

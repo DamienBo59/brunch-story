@@ -2,9 +2,9 @@
 title: "Bagel origin: Poland, not Vienna"
 h1: "Where does the bagel really come from, and why does the Vienna legend fail?"
 translationKey: "bagel-origin"
-date: "2026-10-23"
-publishDate: "2026-10-22T23:00:00+02:00"
-lastmod: "2026-10-23"
+date: "2026-10-10T07:20:00+02:00"
+publishDate: "2026-10-10T07:20:00+02:00"
+lastmod: "2026-10-10T07:20:00+02:00"
 description: "The first written trace of the bagel dates to Krakow in 1610, long before the Viennese legend of 1683. The real history, and what boiling changes."
 categories: ["Eggs and savoury"]
 tags: ["bagel origin", "bagel history", "new york bagel", "montreal bagel", "boiling dough"]

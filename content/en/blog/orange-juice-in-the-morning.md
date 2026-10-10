@@ -2,9 +2,9 @@
 title: "Orange juice in the morning: good or not?"
 h1: "Is drinking orange juice in the morning really a good habit?"
 translationKey: "jus-d-orange-le-matin"
-date: "2026-11-24"
-lastmod: "2026-11-24"
-publishDate: "2026-11-23T23:00:00+01:00"
+date: "2026-10-10T08:40:00+02:00"
+lastmod: "2026-10-10T08:40:00+02:00"
+publishDate: "2026-10-10T08:40:00+02:00"
 description: "Orange juice in the morning: what a glass contains, juice versus whole orange, the empty-stomach effect, official guidance and how to drink it better."
 categories: ["Morning drinks"]
 tags: ["orange juice in the morning", "orange juice", "freshly squeezed juice", "sugars", "breakfast"]

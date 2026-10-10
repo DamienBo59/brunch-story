@@ -2,9 +2,9 @@
 title: "Traditional French toast: the old method"
 h1: "How do you make old-fashioned French toast with stale bread, eggs and milk?"
 translationKey: "pain-perdu-recette-ancienne"
-date: "2026-11-03"
-lastmod: "2026-11-03"
-publishDate: "2026-11-02T23:00:00+01:00"
+date: "2026-10-10T07:50:00+02:00"
+lastmod: "2026-10-10T07:50:00+02:00"
+publishDate: "2026-10-10T07:50:00+02:00"
 description: "Traditional French toast recipe: stale bread, whole milk, eggs, sugar and butter. The ratios, soaking time by bread and the cooking that browns it."
 categories: ["Pancakes and sweet"]
 tags: ["traditional french toast", "french toast", "pain perdu", "no food waste", "sweet brunch"]

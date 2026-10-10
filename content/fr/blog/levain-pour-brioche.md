@@ -2,9 +2,9 @@
 title: "Levain pour brioche : rafraîchi et dosage"
 h1: "Comment préparer un levain pour brioche qui lève sans donner d'acidité ?"
 translationKey: "levain-pour-brioche"
-date: "2026-11-20"
-lastmod: "2026-11-20"
-publishDate: "2026-11-19T23:00:00+01:00"
+date: "2026-10-10T08:30:00+02:00"
+lastmod: "2026-10-10T08:30:00+02:00"
+publishDate: "2026-10-10T08:30:00+02:00"
 description: "Levain pour brioche : les rafraîchis qui l'adoucissent, le dosage dans la pâte, la conversion d'une recette à la levure et le calendrier sur deux jours."
 categories: ["Pancakes et sucré"]
 tags: ["levain pour brioche", "brioche au levain", "levain liquide", "rafraîchi", "brioche maison"]

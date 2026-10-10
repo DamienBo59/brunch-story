@@ -2,9 +2,9 @@
 title: "Chia seed porridge: the recipe"
 h1: "How do you make chia seed porridge, hot or prepared the night before?"
 translationKey: "porridge-graines-de-chia"
-date: "2026-11-17"
-lastmod: "2026-11-17"
-publishDate: "2026-11-16T23:00:00+01:00"
+date: "2026-10-10T08:20:00+02:00"
+lastmod: "2026-10-10T08:20:00+02:00"
+publishDate: "2026-10-10T08:20:00+02:00"
 description: "Chia seed porridge: the ratios with rolled oats, the hot version and the overnight version, the common mistakes and what the bowl adds up to."
 categories: ["Healthy breakfast"]
 tags: ["chia seed porridge", "porridge", "chia seeds", "overnight oats", "healthy breakfast"]

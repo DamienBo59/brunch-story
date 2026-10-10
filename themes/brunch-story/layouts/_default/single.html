@@ -89,7 +89,7 @@
                 <!-- Tags en bas d'article -->
                 <div class="article-tags-bottom">
                     {{ range .Params.tags }}
-                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">#{{ . }}</a>
+                    <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/" class="tag">#{{ . }}</a>
                     {{ end }}
                 </div>
 

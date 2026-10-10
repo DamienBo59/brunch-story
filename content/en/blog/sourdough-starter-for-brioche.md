@@ -2,9 +2,9 @@
 title: "Sourdough starter for brioche: feeding, dose"
 h1: "How do you prepare a sourdough starter for brioche that rises without turning sour?"
 translationKey: "levain-pour-brioche"
-date: "2026-11-20"
-lastmod: "2026-11-20"
-publishDate: "2026-11-19T23:00:00+01:00"
+date: "2026-10-10T08:30:00+02:00"
+lastmod: "2026-10-10T08:30:00+02:00"
+publishDate: "2026-10-10T08:30:00+02:00"
 description: "Sourdough starter for brioche: the feedings that make it mild, how much goes into the dough, converting a yeast recipe and a two-day timetable."
 categories: ["Pancakes and sweet"]
 tags: ["sourdough starter for brioche", "sourdough brioche", "liquid starter", "feeding", "homemade brioche"]

@@ -2,9 +2,9 @@
 title: "Jus d'orange le matin : bonne idée ou pas ?"
 h1: "Boire un jus d'orange le matin, est-ce vraiment une bonne habitude ?"
 translationKey: "jus-d-orange-le-matin"
-date: "2026-11-24"
-lastmod: "2026-11-24"
-publishDate: "2026-11-23T23:00:00+01:00"
+date: "2026-10-10T08:40:00+02:00"
+lastmod: "2026-10-10T08:40:00+02:00"
+publishDate: "2026-10-10T08:40:00+02:00"
 description: "Jus d'orange le matin : ce que contient un verre, la différence avec l'orange entière, l'effet à jeun, les repères officiels et comment le boire mieux."
 categories: ["Boissons du matin"]
 tags: ["jus d'orange le matin", "jus d'orange", "jus pressé", "sucres", "petit déjeuner"]

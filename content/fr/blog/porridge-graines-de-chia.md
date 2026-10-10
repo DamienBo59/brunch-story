@@ -2,9 +2,9 @@
 title: "Porridge aux graines de chia : la recette"
 h1: "Comment faire un porridge aux graines de chia, à chaud ou préparé la veille ?"
 translationKey: "porridge-graines-de-chia"
-date: "2026-11-17"
-lastmod: "2026-11-17"
-publishDate: "2026-11-16T23:00:00+01:00"
+date: "2026-10-10T08:20:00+02:00"
+lastmod: "2026-10-10T08:20:00+02:00"
+publishDate: "2026-10-10T08:20:00+02:00"
 description: "Porridge aux graines de chia : les proportions avec les flocons d'avoine, la version à chaud et la version de la veille, les erreurs et ce que pèse le bol."
 categories: ["Petit déjeuner sain"]
 tags: ["porridge aux graines de chia", "porridge", "graines de chia", "overnight oats", "petit déjeuner sain"]
